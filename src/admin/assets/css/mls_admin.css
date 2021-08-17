@@ -1,0 +1,95 @@
+table.mls-admin-user-table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+}
+
+table.mls-admin-user-table td, table.mls-admin-user-table th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+table.mls-admin-user-table tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+span.mls-dashicon-visibility {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+small.mls-field-desc {
+    display: flex;
+    padding: 3px 5px
+}
+
+.mls-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px
+}
+
+.mls-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0
+}
+
+.mls-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s
+}
+
+.mls-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    -webkit-transition: .4s;
+    transition: .4s
+}
+
+input:checked + .mls-slider {
+    background-color: #496bb6
+}
+
+input:focus + .mls-slider {
+    box-shadow: 0 0 1px #496bb6
+}
+
+input:checked + .mls-slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px)
+}
+
+.mls-slider.mls-round {
+    border-radius: 34px
+}
+
+.mls-slider.mls-round:before {
+    border-radius: 50%
+}
+
+span.mls-pro-content {
+    position: relative;
+    bottom: 10px;
+    left: 5px;
+    background: #496bb6;
+    color: #fff;
+    padding: 0 5px 5px;
+    font-size: 16px
+}

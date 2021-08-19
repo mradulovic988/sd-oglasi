@@ -257,11 +257,11 @@ if (document.body.classList.contains('logged-in')) {
         /**
          * Get selected days value in promotion
          *
-         * @param e Element of the select field
-         * @param p Element for price field
-         * @param s Seven days
-         * @param f Fiftheen days
-         * @param t Third days
+         * @param e {string} Element of the select field
+         * @param p {string} Element for price field
+         * @param s {string} Seven days
+         * @param f {string} Fiftheen days
+         * @param t {string} Third days
          */
         const toggleBetweenSelectDays = function (e, p, s, f, t) {
             const getSelectFreeValues = document.querySelector(e);
@@ -284,10 +284,10 @@ if (document.body.classList.contains('logged-in')) {
             });
         }
         toggleBetweenSelectDays('#mls-promotion-free-days', '.mls-promotion-free-span-price', '', '', '');
-        toggleBetweenSelectDays('#mls-promotion-priority-days', '.mls-promotion-priority-span-price', '', '150,00 RSD', '300,00 RSD');
-        toggleBetweenSelectDays('#mls-promotion-standard-days', '.mls-promotion-standard-span-price', '', '', '300,00 RSD');
-        toggleBetweenSelectDays('#mls-promotion-lead-days', '.mls-promotion-lead-span-price', '', '150,00 RSD', '300,00 RSD');
-        toggleBetweenSelectDays('#mls-promotion-diamant-days', '.mls-promotion-diamant-span-price', '70,00 RSD', '150,00 RSD', '300,00 RSD');
+        toggleBetweenSelectDays('#mls-promotion-priority-days', '.mls-promotion-priority-span-price', '', '100,00 RSD', '200,00 RSD');
+        toggleBetweenSelectDays('#mls-promotion-standard-days', '.mls-promotion-standard-span-price', '', '150,00 RSD', '250,00 RSD');
+        toggleBetweenSelectDays('#mls-promotion-lead-days', '.mls-promotion-lead-span-price', '', '550,00 RSD', '1000,00 RSD');
+        toggleBetweenSelectDays('#mls-promotion-diamant-days', '.mls-promotion-diamant-span-price', '750,00 RSD', '1500,00 RSD', '2000,00 RSD');
     }
 
 }

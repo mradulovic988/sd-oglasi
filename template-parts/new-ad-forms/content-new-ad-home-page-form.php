@@ -240,7 +240,7 @@ $_html   = new Mls_Html();
                 <!-- Ad name -->
                 <div class="mls-w-30">
                     <label for="mls-promotion-free" class="mls-bold-weight">
-                        <input id="mls-promotion-free" name="mls-promotion-free" class="mls-promotion-field mls-toggle-me" type="checkbox" checked>Besplatan oglas
+                        <input id="mls-promotion-free" name="mls-promotion-free" class="mls-promotion-field mls-toggle-me" type="checkbox">Besplatan oglas
 						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
                     </label>
                 </div><!-- End ad name -->

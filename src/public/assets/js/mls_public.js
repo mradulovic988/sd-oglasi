@@ -283,11 +283,57 @@ if (document.body.classList.contains('logged-in')) {
                 }
             });
         }
+
+        // Toggle pricing on the single promotion
         toggleBetweenSelectDays('#mls-promotion-free-days', '.mls-promotion-free-span-price', '', '', '');
         toggleBetweenSelectDays('#mls-promotion-priority-days', '.mls-promotion-priority-span-price', '', '100,00 RSD', '200,00 RSD');
         toggleBetweenSelectDays('#mls-promotion-standard-days', '.mls-promotion-standard-span-price', '', '150,00 RSD', '250,00 RSD');
         toggleBetweenSelectDays('#mls-promotion-lead-days', '.mls-promotion-lead-span-price', '', '550,00 RSD', '1000,00 RSD');
         toggleBetweenSelectDays('#mls-promotion-diamant-days', '.mls-promotion-diamant-span-price', '750,00 RSD', '1500,00 RSD', '2000,00 RSD');
+
+        // Toggle pricing on the total amount
+        toggleBetweenSelectDays('#mls-promotion-free-days', 'span.mls-total-price', '', '', '');
+        toggleBetweenSelectDays('#mls-promotion-priority-days', 'span.mls-total-price', '', '100,00 RSD', '200,00 RSD');
+        toggleBetweenSelectDays('#mls-promotion-standard-days', 'span.mls-total-price', '', '150,00 RSD', '250,00 RSD');
+        toggleBetweenSelectDays('#mls-promotion-lead-days', 'span.mls-total-price', '', '550,00 RSD', '1000,00 RSD');
+        toggleBetweenSelectDays('#mls-promotion-diamant-days', 'span.mls-total-price', '750,00 RSD', '1500,00 RSD', '2000,00 RSD');
+
+        // Checked promotion
+        const checkedPromotion = function (t, df, dt1, dt2, dt3, dt4) {
+            const totalAmount = document.querySelector('span.mls-total-price');
+
+            document.querySelector('input#mls-promotion-free').click();
+            document.querySelector(t).addEventListener('click', () => {
+                if (document.querySelector(t).checked == true) {
+                    document.querySelector(df).disabled = false;
+
+                    document.querySelector(dt1).disabled = true;
+                    document.querySelector(dt1).selectedIndex = 0;
+                    document.querySelector('.mls-promotion-priority-span-price').textContent = '0,00 RSD';
+                    totalAmount.textContent = '0,00 RSD';
+
+                    document.querySelector(dt2).disabled = true;
+                    document.querySelector(dt2).selectedIndex = 0;
+                    document.querySelector('.mls-promotion-standard-span-price').textContent = '0,00 RSD';
+                    totalAmount.textContent = '0,00 RSD';
+
+                    document.querySelector(dt3).disabled = true;
+                    document.querySelector(dt3).selectedIndex = 0;
+                    document.querySelector('.mls-promotion-lead-span-price').textContent = '0,00 RSD';
+                    totalAmount.textContent = '0,00 RSD';
+
+                    document.querySelector(dt4).disabled = true;
+                    document.querySelector(dt4).selectedIndex = 0;
+                    document.querySelector('.mls-promotion-diamant-span-price').textContent = '0,00 RSD';
+                    totalAmount.textContent = '0,00 RSD';
+                }
+            });
+        }
+        checkedPromotion('input#mls-promotion-free', 'select#mls-promotion-free-days', 'select#mls-promotion-priority-days', 'select#mls-promotion-standard-days', 'select#mls-promotion-lead-days', 'select#mls-promotion-diamant-days'); // Free promotion checked
+        checkedPromotion('input#mls-promotion-priority', 'select#mls-promotion-priority-days', 'select#mls-promotion-free-days', 'select#mls-promotion-standard-days', 'select#mls-promotion-lead-days', 'select#mls-promotion-diamant-days'); // Priority promotion checked
+        checkedPromotion('input#mls-promotion-standard', 'select#mls-promotion-standard-days', 'select#mls-promotion-free-days', 'select#mls-promotion-priority-days', 'select#mls-promotion-lead-days', 'select#mls-promotion-diamant-days'); // Standard promotion checked
+        checkedPromotion('input#mls-promotion-lead', 'select#mls-promotion-lead-days', 'select#mls-promotion-free-days', 'select#mls-promotion-priority-days', 'select#mls-promotion-standard-days', 'select#mls-promotion-diamant-days'); // Lead promotion checked
+        checkedPromotion('input#mls-promotion-diamant', 'select#mls-promotion-diamant-days', 'select#mls-promotion-free-days', 'select#mls-promotion-priority-days', 'select#mls-promotion-standard-days', 'select#mls-promotion-lead-days'); // Diamant promotion checked
     }
 
 }

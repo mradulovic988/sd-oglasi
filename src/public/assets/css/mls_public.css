@@ -463,11 +463,11 @@ li#menu-item-140 a.menu-link:hover {
     background-color: #496bb6
 }
 
-.mls-content-form {
+.mls-content-form, .mls-content-form-jobs {
     display: none
 }
 
-.mls-content-form.active {
+.mls-content-form.active, .mls-content-form-jobs.active {
     display: block
 }
 
@@ -625,7 +625,7 @@ input#mls-nondefault, input#mls-default-open {
     margin: 5px;
 }
 
-#mls-second-load, #mls-third-load {
+#mls-second-load, #mls-third-load, #mls-second-load-jobs, #mls-third-load-jobs {
     display: none
 }
 
@@ -889,3 +889,33 @@ input.mls-favorites-ads-submit:hover, input.mls-favorites-ads-submit:active, inp
  ********************************************/
 .mls-promotion-field {margin-right: 10px;}
 .mls-paying-top-wrapper {background: #fef4c0;}
+
+.mls-btn-transparent {
+    background: transparent;
+    color: #3d5b9a;
+    border: 1px solid #3d5b9a;
+}
+
+.mls-btn-transparent:hover {
+    background: #3d5b9a;
+    color: #fff;
+}
+
+/*********************************************
+ ***************** Jobs Ads ******************
+ ********************************************/
+.mls-choose-form-jobs.active {
+    background: #496bb6;
+    color: #fff;
+}
+
+.mls-choose-form-jobs {
+    background: transparent;
+    border: 1px solid #496bb6;
+    color: #496bb6;
+}
+
+.mls-choose-form-jobs:hover {
+    background: #496bb6;
+    color: #fff;
+}

@@ -112,7 +112,7 @@ if (document.body.classList.contains('logged-in')) {
      */
     if (document.body.classList.contains('page-id-151')) {
         /**
-         * Toggle tabs on form
+         * Toggle tabs on form Naslovna
          *
          * @type {Element}
          */
@@ -133,6 +133,31 @@ if (document.body.classList.contains('logged-in')) {
                 });
                 const element = document.getElementById(id);
                 element.classList.add("active");
+            }
+        }
+
+        /**
+         * Toggle tabs on form Jobs
+         *
+         * @type {Element}
+         */
+        const tabsJobs = document.querySelector(".mls-choose-form-wrapper-jobs");
+        const tabButtonJobs = document.querySelectorAll(".mls-choose-form-jobs");
+        const contentsJobs = document.querySelectorAll(".mls-content-form-jobs");
+
+        tabsJobs.onclick = e => {
+            const idJobs = e.target.dataset.idjobs;
+            if (idJobs) {
+                tabButtonJobs.forEach(btn => {
+                    btn.classList.remove("active");
+                });
+                e.target.classList.add("active");
+
+                contentsJobs.forEach(content => {
+                    content.classList.remove("active");
+                });
+                const elementJobs = document.getElementById(idJobs);
+                elementJobs.classList.add("active");
             }
         }
 
@@ -188,6 +213,36 @@ if (document.body.classList.contains('logged-in')) {
                 document.querySelector('#mls-second-load').style.display = 'none';
                 document.querySelector('#mls-third-load').style.display = 'block';
             });
+        }
+
+        /**
+         * Toggle between categories and the rest of the form for the Jobs page ads
+         */
+        if (document.querySelector('#mls-first-load-jobs')) {
+            document.querySelector('#mls-next-to-second-load-jobs').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-jobs').style.display = 'none';
+                document.querySelector('#mls-third-load-jobs').style.display = 'none';
+                document.querySelector('#mls-second-load-jobs').style.display = 'block';
+            });
+
+            document.querySelector('#mls-back-to-first-load-jobs').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-jobs').style.display = 'block';
+                document.querySelector('#mls-second-load-jobs').style.display = 'none';
+                document.querySelector('#mls-third-load-jobs').style.display = 'none';
+            });
+
+            document.querySelector('#mls-back-to-second-load-jobs').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-jobs').style.display = 'none';
+                document.querySelector('#mls-second-load-jobs').style.display = 'block';
+                document.querySelector('#mls-third-load-jobs').style.display = 'none';
+            });
+
+            document.querySelector('#mls-next-to-third-load-jobs').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-jobs').style.display = 'none';
+                document.querySelector('#mls-second-load-jobs').style.display = 'none';
+                document.querySelector('#mls-third-load-jobs').style.display = 'block';
+            });
+
         }
 
         /**
@@ -268,7 +323,7 @@ if (document.body.classList.contains('logged-in')) {
             const priceField = document.querySelector(p);
 
             getSelectFreeValues.addEventListener('change', function () {
-                switch(this.value) {
+                switch (this.value) {
                     case '7':
                         return priceField.innerHTML = s;
                         break;
@@ -298,7 +353,16 @@ if (document.body.classList.contains('logged-in')) {
         toggleBetweenSelectDays('#mls-promotion-lead-days', 'span.mls-total-price', '', '550,00 RSD', '1000,00 RSD');
         toggleBetweenSelectDays('#mls-promotion-diamant-days', 'span.mls-total-price', '750,00 RSD', '1500,00 RSD', '2000,00 RSD');
 
-        // Checked promotion
+        /**
+         * Toggle on all Promotion prices
+         *
+         * @param t
+         * @param df
+         * @param dt1
+         * @param dt2
+         * @param dt3
+         * @param dt4
+         */
         const checkedPromotion = function (t, df, dt1, dt2, dt3, dt4) {
             const totalAmount = document.querySelector('span.mls-total-price');
 

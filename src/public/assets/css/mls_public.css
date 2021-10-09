@@ -625,7 +625,7 @@ input#mls-nondefault, input#mls-default-open {
     margin: 5px;
 }
 
-#mls-second-load, #mls-third-load, #mls-second-load-jobs, #mls-third-load-jobs {
+#mls-second-load, #mls-third-load, #mls-second-load-jobs, #mls-third-load-jobs, #mls-second-load-jobs-buy, #mls-third-load-jobs-buy {
     display: none
 }
 
@@ -878,6 +878,7 @@ input.mls-favorites-ads-submit:hover, input.mls-favorites-ads-submit:active, inp
 .mls-border-left-5-blue {border-left: 5px solid #0269A4;}
 .mls-border-left-5-green {border-left: 5px solid #088F8F;}
 .mls-align-right {text-align: right}
+.mls-field-wrapper.mls-align-right {text-align: right;}
 .mls-padding-0 {padding: 0}
 .mls-margin-0 {margin: 0}
 .mls-mr-10 {margin-right: 10px}
@@ -916,6 +917,19 @@ input.mls-favorites-ads-submit:hover, input.mls-favorites-ads-submit:active, inp
 }
 
 .mls-choose-form-jobs:hover {
+    background: #496bb6;
+    color: #fff;
+}
+
+.mls-additional-details{display: none}
+#mls-additional-details-jobs {
+    border: 1px solid #496bb6;
+    background: #fff;
+    color: #496bb6;
+}
+
+#mls-additional-details-jobs:hover {
+    border: 1px solid #496bb6;
     background: #496bb6;
     color: #fff;
 }

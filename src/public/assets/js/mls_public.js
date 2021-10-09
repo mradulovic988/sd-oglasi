@@ -242,6 +242,35 @@ if (document.body.classList.contains('logged-in')) {
                 document.querySelector('#mls-second-load-jobs').style.display = 'none';
                 document.querySelector('#mls-third-load-jobs').style.display = 'block';
             });
+        }
+
+        /**
+         * Toggle between categories and the rest of the form for the Jobs page ads
+         */
+        if (document.querySelector('#mls-first-load-jobs-buy')) {
+            document.querySelector('#mls-next-to-second-load-jobs-buy').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-jobs-buy').style.display = 'none';
+                document.querySelector('#mls-third-load-jobs-buy').style.display = 'none';
+                document.querySelector('#mls-second-load-jobs-buy').style.display = 'block';
+            });
+
+            document.querySelector('#mls-back-to-first-load-jobs-buy').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-jobs-buy').style.display = 'block';
+                document.querySelector('#mls-second-load-jobs-buy').style.display = 'none';
+                document.querySelector('#mls-third-load-jobs-buy').style.display = 'none';
+            });
+
+            document.querySelector('#mls-back-to-second-load-jobs-buy').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-jobs-buy').style.display = 'none';
+                document.querySelector('#mls-second-load-jobs-buy').style.display = 'block';
+                document.querySelector('#mls-third-load-jobs-buy').style.display = 'none';
+            });
+
+            document.querySelector('#mls-next-to-third-load-jobs-buy').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-jobs-buy').style.display = 'none';
+                document.querySelector('#mls-second-load-jobs-buy').style.display = 'none';
+                document.querySelector('#mls-third-load-jobs-buy').style.display = 'block';
+            });
 
         }
 
@@ -398,6 +427,21 @@ if (document.body.classList.contains('logged-in')) {
         checkedPromotion('input#mls-promotion-standard', 'select#mls-promotion-standard-days', 'select#mls-promotion-free-days', 'select#mls-promotion-priority-days', 'select#mls-promotion-lead-days', 'select#mls-promotion-diamant-days'); // Standard promotion checked
         checkedPromotion('input#mls-promotion-lead', 'select#mls-promotion-lead-days', 'select#mls-promotion-free-days', 'select#mls-promotion-priority-days', 'select#mls-promotion-standard-days', 'select#mls-promotion-diamant-days'); // Lead promotion checked
         checkedPromotion('input#mls-promotion-diamant', 'select#mls-promotion-diamant-days', 'select#mls-promotion-free-days', 'select#mls-promotion-priority-days', 'select#mls-promotion-standard-days', 'select#mls-promotion-lead-days'); // Diamant promotion checked
+    }
+
+
+    /**
+     *
+     */
+    if (document.querySelector('#mls-additional-details-jobs')) {
+        const getDetailedSection = document.querySelector('.mls-additional-details');
+        document.querySelector('#mls-additional-details-jobs').addEventListener('click', () => {
+            if (getDetailedSection.style.display === 'block') {
+                getDetailedSection.style.display = 'none';
+            } else {
+                getDetailedSection.style.display = 'block';
+            }
+        });
     }
 
 }

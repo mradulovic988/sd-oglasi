@@ -1,6 +1,15 @@
+<?php
+include MLAB_STUDIO_DIR . 'src/config/Mls_Config.php';
+include MLAB_STUDIO_DIR . 'src/admin/settings-api/Mls_Settings_Api_Dashboard.php';
+include MLAB_STUDIO_DIR . 'src/config/html-templates/Mls_Html.php';
+
+$_config = new Mls_Config();
+$_api    = new Mls_Settings_Api_Dashboard();
+$_html   = new Mls_Html();
+?>
 <div class="mls-home-form-wrapper">
     <small>Polja označena <span style="color: red">*</span> su obavezna za unos</small>
-    <form class="mls-jobs" method="post" enctype="multipart/form-data">
+    <form class="mls-jobs" method="post" id="mls-test" enctype="multipart/form-data">
         <input type="hidden" name="ispost_jobs" value="1"/>
         <input type="hidden" name="userid_jobs" value=""/>
 
@@ -34,9 +43,334 @@
         <div id="mls-second-load-jobs">
             <div class="mls-row-form">
                 <div class="mls-w-70">
+                    <div class="mls-field-wrapper">
+                        <label for="mls-title">Naslov *</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <input type="text" id="mls-title" class="mls-field" name="mls-title" required>
+                    </div>
+
+                    <div class="mls-field-wrapper">
+                        <label for="mls-title">Unesite tekstualni opis poslovanja *</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <textarea id="mls-description" class="mls-field" name="mls-description" rows="3" required></textarea>
+                    </div>
+
+                </div>
+                <div class="mls-w-30">
+                    <div class="mls-field-wrapper">
+                        <label for="mls-phone">Telefon *</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <input type="text" id="mls-phone" class="mls-field" name="mls-phone" required>
+                    </div>
+
+                    <div class="mls-field-wrapper">
+                        <label for="mls-additional-phone">Dodatni telefon</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <input type="text" id="mls-additional-phone" class="mls-field" name="mls-additional-phone">
+                    </div>
+
+                    <div class="mls-field-wrapper">
+                        <label for="mls-email">Email *</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <input type="email" id="mls-email" class="mls-field" name="mls-email" required>
+                    </div>
+					<?php if ( $_config->mls_is_person() ) { ?>
+                        <div class="mls-field-wrapper">
+                            <input type="checkbox" id="mls-company-ad" class="mls-field" name="mls-company-ad">
+                            <label for="mls-company-ad">Obeležite ovo polje ukoliko se oglašavate kao pravno lice</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        </div>
+					<?php } ?>
                 </div>
             </div>
-            <!-- Content below -->
+
+            <div class="mls-row-form">
+                <div class="mls-w-25">
+                    <div class="mls-field-wrapper">
+                        <label for="mls-place">Mesto *</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <select name="mls-place" class="mls-field mls-disable" id="mls-place" required>
+							<?php
+							foreach ( $_config->mls_cities as $mls_city ) {
+								echo '<option value="' . $mls_city . '">' . $mls_city . '</option>';
+							}
+							?>
+                        </select>
+
+                    </div>
+                </div>
+                <div class="mls-w-25">
+                    <div class="mls-field-wrapper">
+                        <label for="mls-sell-street">Ulica *</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <input type="text" id="mls-sell-street" class="mls-field mls-disable" name="mls-sell-street" required>
+                    </div>
+                </div>
+                <div class="mls-w-25">
+                    <div class="mls-field-wrapper">
+                        <label for="mls-sell-street-number">Broj *</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <input type="text" id="mls-sell-street-number" class="mls-field mls-disable" name="mls-sell-street-number" required>
+                    </div>
+                </div>
+                <div class="mls-w-25">
+                    <div class="mls-field-wrapper">
+                        <input type="checkbox" id="mls-sell-hide-location" class="mls-field" name="mls-sell-hide-location">
+                        <label for="mls-sell-hide-location">Obeležite ovo polje ukoliko nemate fizičku lokaciju</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mls-row-form">
+                <div class="mls-w-25">
+                    <div class="mls-field-wrapper">
+                        <input type="checkbox" id="mls-sell-remote" class="" name="mls-sell-remote">
+                        <label for="mls-sell-remote">Remote</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mls-row-form">
+                <div class="mls-w-50">
+                    <div class="mls-field-wrapper">
+                        <label for="mls-sell-salary">Plata</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <input type="text" id="mls-sell-salary" class="mls-field" name="mls-sell-salary">
+                    </div>
+                </div>
+
+                <div class="mls-w-25">
+                    <div class="mls-field-wrapper">
+                        <div class="mls-w-100 mls-padding-0">
+                            <input type="radio" id="mls-sell-pay-rsd" class="" name="mls-sell-pay" value="RSD">
+                            <label for="mls-sell-pay-rsd">RSD</label>
+                        </div>
+                        <div class="mls-w-100 mls-padding-0">
+                            <input type="radio" id="mls-sell-pay-eur" class="" name="mls-sell-pay" value="EUR">
+                            <label for="mls-sell-pay-eur">EUR</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-w-25">
+                    <div class="mls-field-wrapper">
+                        <div class="mls-w-100 mls-padding-0">
+                            <input type="radio" id="mls-sell-pay-method-hour" class="" name="mls-sell-pay-method" value="Po satu">
+                            <label for="mls-sell-pay-method-hour">Po satu</label>
+                        </div>
+                        <div class="mls-w-100 mls-padding-0">
+                            <input type="radio" id="mls-sell-pay-method-day" class="" name="mls-sell-pay-method" value="Po danu">
+                            <label for="mls-sell-pay-method-day">Po danu</label>
+                        </div>
+
+                        <div class="mls-w-100 mls-padding-0">
+                            <input type="radio" id="mls-sell-pay-method-month" class="" name="mls-sell-pay-method" value="Mesečna plata">
+                            <label for="mls-sell-pay-method-month">Mesečna plata</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mls-row-form">
+                <div class="mls-w-50">
+                    <div class="mls-field-wrapper">
+                        <label for="mls-sell-file">Unesite svoj logo</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <input type="file" id="mls-sell-file" class="mls-field" name="mls-sell-file" accept=".jpg, .jpeg, .png" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mls-row-form">
+                <div class="mls-w-100">
+                    <div class="mls-field-wrapper">
+                        <label for="mls-sell-instagram">Instagram</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <input type="url" id="mls-sell-instagram" class="mls-field" name="mls-sell-instagram">
+                    </div>
+                </div>
+                <div class="mls-w-100">
+                    <div class="mls-field-wrapper">
+                        <label for="mls-sell-facebook">Facebook</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <input type="url" id="mls-sell-facebook" class="mls-field" name="mls-sell-facebook">
+                    </div>
+                </div>
+                <div class="mls-w-100">
+                    <div class="mls-field-wrapper">
+                        <label for="mls-sell-linkedin">Linkedin</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <input type="url" id="mls-sell-linkedin" class="mls-field" name="mls-sell-linkedin">
+                    </div>
+                </div>
+                <div class="mls-w-100">
+                    <div class="mls-field-wrapper">
+                        <label for="mls-sell-website">Website link</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <input type="url" id="mls-sell-website" class="mls-field" name="mls-sell-website">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mls-row-form">
+                <div class="mls-w-100">
+                    <button type="button" id="mls-additional-details-jobs">Detaljnije</button>
+                </div>
+            </div>
+
+            <div class="mls-additional-details">
+                <div class="mls-row-form">
+                    <div class="mls-w-50">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-number-people">Broj izvršioca</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <select name="mls-buy-number-people" class="mls-field mls-disable" id="mls-buy-number-people">
+                                <option value="">- Izaberite -</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-50">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-working-hours">Radno vreme</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <select name="mls-buy-working-hours" class="mls-field mls-disable" id="mls-buy-working-hours">
+                                <option value="">- Izaberite -</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-50">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-period-engagement">Period angažovanja</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <select name="mls-buy-period-engagement" class="mls-field mls-disable" id="mls-buy-period-engagement">
+                                <option value="">- Izaberite -</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-50">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-qualification">KVALIFIKACIJE</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <select name="mls-buy-qualification" class="mls-field mls-disable" id="mls-buy-qualification">
+                                <option value="">- Izaberite -</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-50">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-experience">ISKUSTVO</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <select name="mls-buy-experience" class="mls-field mls-disable" id="mls-buy-experience">
+                                <option value="">- Izaberite -</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mls-w-50">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-additional-buy-photos">DODATNE SLIKE</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <input type="file" id="mls-sell-additional-buy-photos" class="mls-field" name="mls-sell-additional-buy-photos" accept=".jpg, .jpeg, .png" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <h4>Opis posla</h4>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-job-description">Unesite opis posla</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <textarea id="mls-buy-job-description" class="mls-field" name="mls-buy-job-description" rows="3" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <h4>Zahtevi radnog mesta</h4>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-practice">Znanje i veštine</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <textarea id="mls-buy-practice" class="mls-field" name="mls-buy-practice" rows="3" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-work-experience">Radno iskustvo</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <textarea id="mls-buy-work-experience" class="mls-field" name="mls-buy-work-experience" rows="3" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-candidate-profile">Profil kandidata</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <textarea id="mls-buy-candidate-profile" class="mls-field" name="mls-buy-candidate-profile" rows="3" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-offer">Nudimo</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <textarea id="mls-buy-offer" class="mls-field" name="mls-buy-offer" rows="3" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-notice">Napomena</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <textarea id="mls-buy-notice" class="mls-field" name="mls-buy-notice" rows="3" required></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <div class="mls-field-wrapper mls-align-right">
+                            <input type="checkbox" id="mls-sell-choose-position-display" class="" name="mls-sell-choose-position-display">
+                            <label for="mls-sell-choose-position-display">Prikazuj oglas u listi "Vidi sve oglase ovog oglašivača"</label>
+				            <?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="mls-row-form">
                 <div class="mls-w-100">
@@ -44,7 +378,8 @@
                     <button type="button" id="mls-next-to-third-load-jobs">Dalje ( Izbor tipa oglasa )</button>
                 </div>
             </div>
-        </div><!-- End Form - Second page -->
+
+        </div> <!-- End Form - Second page -->
 
         <!-- Ads - Third page -->
         <div id="mls-third-load-jobs">

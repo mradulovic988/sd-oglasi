@@ -42,54 +42,83 @@ $_html   = new Mls_Html();
         <!-- Form - Second page -->
         <div id="mls-second-load-jobs-buy">
             <div class="mls-row-form">
-                <div class="mls-w-70">
-                    <div class="mls-field-wrapper">
-                        <label for="mls-title">Naslov *</label>
-						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
-                        <input type="text" id="mls-title" class="mls-field" name="mls-title" required>
-                    </div>
-
-                    <div class="mls-field-wrapper">
-                        <label for="mls-title">Unesite tekstualni opis poslovanja *</label>
-						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
-                        <textarea id="mls-description" class="mls-field" name="mls-description" rows="3" required></textarea>
-                    </div>
-
-                </div>
                 <div class="mls-w-30">
                     <div class="mls-field-wrapper">
-                        <label for="mls-phone">Telefon *</label>
+                        <label for="mls-buy-profile-img">Postavite fotografiju</label>
 						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
-                        <input type="text" id="mls-phone" class="mls-field" name="mls-phone" required>
+                        <input type="file" id="mls-buy-profile-img" class="mls-field" name="mls-buy-profile-img" accept=".jpg, .jpeg, .png" required>
+                    </div>
+                </div>
+                <div class="mls-w-70">
+                    <h4>Poslodavac</h4>
+                    <div class="mls-field-wrapper">
+                        <label for="mls-buy-title">Naziv oglasa *</label>
+						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <input type="text" id="mls-buy-title" class="mls-field" name="mls-buy-title" required>
                     </div>
 
                     <div class="mls-field-wrapper">
-                        <label for="mls-additional-phone">Dodatni telefon</label>
+                        <input type="checkbox" id="mls-buy-cv" name="mls-buy-cv">
+                        <label for="mls-buy-cv">Koristi CV</label>
 						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
-                        <input type="text" id="mls-additional-phone" class="mls-field" name="mls-additional-phone">
                     </div>
 
                     <div class="mls-field-wrapper">
-                        <label for="mls-email">Email *</label>
+                        <input type="checkbox" id="mls-buy-acc-info-remember" name="mls-buy-acc-info-remember">
+                        <label for="mls-buy-acc-info-remember">Koristi informacije sa mog naloga</label>
 						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
-                        <input type="email" id="mls-email" class="mls-field" name="mls-email" required>
                     </div>
-					<?php if ( $_config->mls_is_person() ) { ?>
-                        <div class="mls-field-wrapper">
-                            <input type="checkbox" id="mls-company-ad" class="mls-field" name="mls-company-ad">
-                            <label for="mls-company-ad">Obeležite ovo polje ukoliko se oglašavate kao pravno lice</label>
-							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+
+                    <div class="mls-row-form mls-mt-20">
+                        <div class="mls-field-wrapper mls-mr-10">
+                            <label for="mls-buy-name">Ime</label>
+                            <input type="text" id="mls-buy-name" class="mls-field" name="mls-buy-name">
                         </div>
-					<?php } ?>
+                        <div class="mls-field-wrapper mls-mr-10">
+                            <label for="mls-buy-last-name">Prezime</label>
+                            <input type="text" id="mls-buy-last-name" class="mls-field" name="mls-buy-last-name">
+                        </div>
+                        <div class="mls-field-wrapper mls-mr-10">
+                            <label for="mls-buy-phone">Telefon</label>
+                            <input type="text" id="mls-buy-phone" class="mls-field" name="mls-buy-phone">
+                        </div>
+                        <div class="mls-field-wrapper mls-mr-10">
+                            <label for="mls-buy-additional-phone">Dodatni telefon</label>
+                            <input type="text" id="mls-buy-additional-phone" class="mls-field" name="mls-buy-additional-phone">
+                        </div>
+                        <div class="mls-field-wrapper mls-mr-10">
+                            <label for="mls-buy-email">E-mail</label>
+                            <input type="email" id="mls-buy-email" class="mls-field" name="mls-buy-email">
+                        </div>
+                    </div>
+
+                    <div class="mls-row-form mls-mt-20">
+                        <div class="mls-field-wrapper mls-mr-10">
+                            <label for="mls-buy-instagram">Instagram</label>
+                            <input type="url" id="mls-buy-instagram" class="mls-field" name="mls-buy-instagram">
+                        </div>
+                        <div class="mls-field-wrapper mls-mr-10">
+                            <label for="mls-buy-facebook">Facebook</label>
+                            <input type="url" id="mls-buy-facebook" class="mls-field" name="mls-buy-facebook">
+                        </div>
+                        <div class="mls-field-wrapper mls-mr-10">
+                            <label for="mls-buy-linkedin">Linkedin</label>
+                            <input type="url" id="mls-buy-linkedin" class="mls-field" name="mls-buy-linkedin">
+                        </div>
+                        <div class="mls-field-wrapper mls-mr-10">
+                            <label for="mls-buy-website">Privatni veb portal/blog</label>
+                            <input type="url" id="mls-buy-website" class="mls-field" name="mls-buy-website">
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div class="mls-row-form">
-                <div class="mls-w-25">
+                <div class="mls-w-50">
                     <div class="mls-field-wrapper">
-                        <label for="mls-place">Mesto *</label>
+                        <label for="mls-buy-city">Grad *</label>
 						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
-                        <select name="mls-place" class="mls-field mls-disable" id="mls-place" required>
+                        <select name="mls-buy-city" class="mls-field mls-disable" id="mls-buy-city" required>
 							<?php
 							foreach ( $_config->mls_cities as $mls_city ) {
 								echo '<option value="' . $mls_city . '">' . $mls_city . '</option>';
@@ -99,35 +128,63 @@ $_html   = new Mls_Html();
 
                     </div>
                 </div>
-                <div class="mls-w-25">
-                    <div class="mls-field-wrapper">
-                        <label for="mls-buy-street">Ulica *</label>
-						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
-                        <input type="text" id="mls-buy-street" class="mls-field mls-disable" name="mls-buy-street" required>
+            </div>
+
+            <div class="mls-w-50">
+                <h4>Vozačka dozvola</h4>
+                <div class="mls-row-form">
+                    <div class="mls-field-wrapper mls-mr-20">
+                        <input type="checkbox" id="mls-buy-driving-licence-a" name="mls-buy-driving-licence-a">
+                        <label for="mls-buy-driving-licence-a">A</label>
                     </div>
-                </div>
-                <div class="mls-w-25">
-                    <div class="mls-field-wrapper">
-                        <label for="mls-buy-street-number">Broj *</label>
-						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
-                        <input type="text" id="mls-buy-street-number" class="mls-field mls-disable" name="mls-buy-street-number" required>
+
+                    <div class="mls-field-wrapper mls-mr-20">
+                        <input type="checkbox" id="mls-buy-driving-licence-b" name="mls-buy-driving-licence-b">
+                        <label for="mls-buy-driving-licence-b">B</label>
                     </div>
-                </div>
-                <div class="mls-w-25">
+
+                    <div class="mls-field-wrapper mls-mr-20">
+                        <input type="checkbox" id="mls-buy-driving-licence-c" name="mls-buy-driving-licence-c">
+                        <label for="mls-buy-driving-licence-c">C</label>
+                    </div>
+
+                    <div class="mls-field-wrapper mls-mr-20">
+                        <input type="checkbox" id="mls-buy-driving-licence-d" name="mls-buy-driving-licence-d">
+                        <label for="mls-buy-driving-licence-d">D</label>
+                    </div>
+
                     <div class="mls-field-wrapper">
-                        <input type="checkbox" id="mls-buy-hide-location" class="mls-field" name="mls-buy-hide-location">
-                        <label for="mls-buy-hide-location">Obeležite ovo polje ukoliko nemate fizičku lokaciju</label>
-						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <input type="checkbox" id="mls-buy-driving-licence-e" name="mls-buy-driving-licence-e">
+                        <label for="mls-buy-driving-licence-e">E</label>
                     </div>
                 </div>
             </div>
-
+            <div class="mls-row-form">
+                <div class="mls-w-50">
+                    <div class="mls-field-wrapper">
+                        <h4>Obrazovanje</h4>
+                    </div>
+                </div>
+            </div>
             <div class="mls-row-form">
                 <div class="mls-w-25">
+                    <div class="mls-field-wrapper mls-mr-10">
+                        <button type="button" id="mls-buy-school" class="mls-btn-orange">+ DODAJTE SREDNJU ŠKOLU</button>
+                    </div>
+                </div>
+                <div class="mls-w-25">
+                    <div class="mls-field-wrapper mls-mr-10">
+                        <button type="button" id="mls-buy-high-school" class="mls-btn-orange">+ DODAJTE VISOKU ILI SREDNJU ŠKOLU</button>
+                    </div>
+                </div>
+                <div class="mls-w-25">
+                    <div class="mls-field-wrapper mls-mr-10">
+                        <button type="button" id="mls-buy-college" class="mls-btn-orange">+ DODAJTE FAKULTET</button>
+                    </div>
+                </div>
+                <div class="mls-w-25">
                     <div class="mls-field-wrapper">
-                        <input type="checkbox" id="mls-buy-remote" class="" name="mls-buy-remote">
-                        <label for="mls-buy-remote">Remote</label>
-						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                        <button type="button" id="mls-buy-after-college" class="mls-btn-orange">+ DODAJTE POSTDIPLOMSKE STUDIJE</button>
                     </div>
                 </div>
             </div>
@@ -135,84 +192,10 @@ $_html   = new Mls_Html();
             <div class="mls-row-form">
                 <div class="mls-w-50">
                     <div class="mls-field-wrapper">
-                        <label for="mls-buy-salary">Plata</label>
-						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
-                        <input type="text" id="mls-buy-salary" class="mls-field" name="mls-buy-salary">
+                        <input type="checkbox" id="mls-buy-only-lower-school" name="mls-buy-only-lower-school">
+                        <label for="mls-buy-only-lower-school">Imam samo osnovnu školu</label>
                     </div>
                 </div>
-
-                <div class="mls-w-25">
-                    <div class="mls-field-wrapper">
-                        <div class="mls-w-100 mls-padding-0">
-                            <input type="radio" id="mls-buy-pay-rsd" class="" name="mls-buy-pay" value="RSD">
-                            <label for="mls-buy-pay-rsd">RSD</label>
-                        </div>
-                        <div class="mls-w-100 mls-padding-0">
-                            <input type="radio" id="mls-buy-pay-eur" class="" name="mls-buy-pay" value="EUR">
-                            <label for="mls-buy-pay-eur">EUR</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mls-w-25">
-                    <div class="mls-field-wrapper">
-                        <div class="mls-w-100 mls-padding-0">
-                            <input type="radio" id="mls-buy-pay-method-hour" class="" name="mls-buy-pay-method" value="Po satu">
-                            <label for="mls-buy-pay-method-hour">Po satu</label>
-                        </div>
-                        <div class="mls-w-100 mls-padding-0">
-                            <input type="radio" id="mls-buy-pay-method-day" class="" name="mls-buy-pay-method" value="Po danu">
-                            <label for="mls-buy-pay-method-day">Po danu</label>
-                        </div>
-
-                        <div class="mls-w-100 mls-padding-0">
-                            <input type="radio" id="mls-buy-pay-method-month" class="" name="mls-buy-pay-method" value="Mesečna plata">
-                            <label for="mls-buy-pay-method-month">Mesečna plata</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mls-row-form">
-                <div class="mls-w-50">
-                    <div class="mls-field-wrapper">
-                        <label for="mls-buy-file">Unesite svoj logo</label>
-						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
-                        <input type="file" id="mls-buy-file" class="mls-field" name="mls-buy-file" accept=".jpg, .jpeg, .png" required>
-                    </div>
-                </div>
-            </div>
-
-            <div class="mls-row-form">
-                <div class="mls-w-100">
-                    <div class="mls-field-wrapper">
-                        <label for="mls-buy-instagram">Instagram</label>
-						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
-                        <input type="url" id="mls-buy-instagram" class="mls-field" name="mls-buy-instagram">
-                    </div>
-                </div>
-                <div class="mls-w-100">
-                    <div class="mls-field-wrapper">
-                        <label for="mls-buy-facebook">Facebook</label>
-						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
-                        <input type="url" id="mls-buy-facebook" class="mls-field" name="mls-buy-facebook">
-                    </div>
-                </div>
-                <div class="mls-w-100">
-                    <div class="mls-field-wrapper">
-                        <label for="mls-buy-linkedin">Linkedin</label>
-						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
-                        <input type="url" id="mls-buy-linkedin" class="mls-field" name="mls-buy-linkedin">
-                    </div>
-                </div>
-                <div class="mls-w-100">
-                    <div class="mls-field-wrapper">
-                        <label for="mls-buy-website">Website link</label>
-						<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
-                        <input type="url" id="mls-buy-website" class="mls-field" name="mls-buy-website">
-                    </div>
-                </div>
-
             </div>
 
             <div class="mls-row-form">

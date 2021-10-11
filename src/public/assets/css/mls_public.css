@@ -518,7 +518,9 @@ li#menu-item-140 a.menu-link:hover {
         display: inline-flex;
     }
 
-    .mls-promotion-select-field {width: 70%}
+    .mls-promotion-select-field {
+        width: 70%
+    }
 
     .mls-w-70 {
         width: 70%;
@@ -590,7 +592,9 @@ li#menu-item-140 a.menu-link:hover {
         display: block
     }
 
-    .mls-promotion-select-field {width: 100%}
+    .mls-promotion-select-field {
+        width: 100%
+    }
 
     .mls-w-70 {
         width: 100%;
@@ -627,6 +631,14 @@ input#mls-nondefault, input#mls-default-open {
 
 #mls-second-load, #mls-third-load, #mls-second-load-jobs, #mls-third-load-jobs, #mls-second-load-jobs-buy, #mls-third-load-jobs-buy {
     display: none
+}
+
+.mls-mr-10 {
+    margin-right: 10px;
+}
+
+.mls-mr-20 {
+    margin-right: 20px;
 }
 
 .mls-mt-20 {
@@ -871,25 +883,69 @@ input.mls-favorites-ads-submit:hover, input.mls-favorites-ads-submit:active, inp
     color: #FF7000;
     background: transparent;
 }
-.mls-border-1-gray {border: 1px solid #ddd;}
-.mls-border-left-5-gray {border-left: 5px solid #ddd;}
-.mls-border-left-5-yellow {border-left: 5px solid #ffff00;}
-.mls-border-left-5-orange {border-left: 5px solid #FFA500;}
-.mls-border-left-5-blue {border-left: 5px solid #0269A4;}
-.mls-border-left-5-green {border-left: 5px solid #088F8F;}
-.mls-align-right {text-align: right}
-.mls-field-wrapper.mls-align-right {text-align: right;}
-.mls-padding-0 {padding: 0}
-.mls-margin-0 {margin: 0}
-.mls-mr-10 {margin-right: 10px}
-.mls-border-bottom-red {border-bottom: 1px solid red}
-.mls-blur-1 {filter: blur(1px)}
+
+.mls-border-1-gray {
+    border: 1px solid #ddd;
+}
+
+.mls-border-left-5-gray {
+    border-left: 5px solid #ddd;
+}
+
+.mls-border-left-5-yellow {
+    border-left: 5px solid #ffff00;
+}
+
+.mls-border-left-5-orange {
+    border-left: 5px solid #FFA500;
+}
+
+.mls-border-left-5-blue {
+    border-left: 5px solid #0269A4;
+}
+
+.mls-border-left-5-green {
+    border-left: 5px solid #088F8F;
+}
+
+.mls-align-right {
+    text-align: right
+}
+
+.mls-field-wrapper.mls-align-right {
+    text-align: right;
+}
+
+.mls-padding-0 {
+    padding: 0
+}
+
+.mls-margin-0 {
+    margin: 0
+}
+
+.mls-mr-10 {
+    margin-right: 10px
+}
+
+.mls-border-bottom-red {
+    border-bottom: 1px solid red
+}
+
+.mls-blur-1 {
+    filter: blur(1px)
+}
 
 /*********************************************
  ***************** Promotion *****************
  ********************************************/
-.mls-promotion-field {margin-right: 10px;}
-.mls-paying-top-wrapper {background: #fef4c0;}
+.mls-promotion-field {
+    margin-right: 10px;
+}
+
+.mls-paying-top-wrapper {
+    background: #fef4c0;
+}
 
 .mls-btn-transparent {
     background: transparent;
@@ -921,7 +977,10 @@ input.mls-favorites-ads-submit:hover, input.mls-favorites-ads-submit:active, inp
     color: #fff;
 }
 
-.mls-additional-details{display: none}
+.mls-additional-details {
+    display: none
+}
+
 #mls-additional-details-jobs {
     border: 1px solid #496bb6;
     background: #fff;
@@ -932,4 +991,17 @@ input.mls-favorites-ads-submit:hover, input.mls-favorites-ads-submit:active, inp
     border: 1px solid #496bb6;
     background: #496bb6;
     color: #fff;
+}
+
+.mls-btn-orange {
+    font-size: 12px;
+    font-weight: 900;
+    text-align: left;
+    height: 50px;
+    width: 100%;
+    background: #FF930F;
+}
+
+.mls-btn-orange:hover {
+    background: #eb6608;
 }

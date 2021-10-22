@@ -1005,3 +1005,7 @@ input.mls-favorites-ads-submit:hover, input.mls-favorites-ads-submit:active, inp
 .mls-btn-orange:hover {
     background: #eb6608;
 }
+
+.mls-buy-education-wrapper {
+    display: none;
+}

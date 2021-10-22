@@ -198,6 +198,231 @@ $_html   = new Mls_Html();
                 </div>
             </div>
 
+            <div class="mls-buy-education-wrapper">
+                <div class="mls-row-form">
+                    <div class="mls-w-50">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-education-level">Stepen obrazovanja</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <select name="mls-buy-education-level" class="mls-field" id="mls-buy-education-level" required>
+                                <option value="">Izaberite</option>
+                                <option value="OsnovnaSkola">Osnovna škola</option>
+                                <option value="SrednjaSkola">Srednja škola</option>
+                                <option value="VisaSkolaVisoka">Viša škola ili Bachelor / Visoka škola</option>
+                                <option value="FakultetMaster">Fakultet / Master</option>
+                                <option value="Magistratura">Magistratura</option>
+                                <option value="PhdDoktorat">Phd ili Doktorat</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mls-w-50">
+                        <div class="mls-field-wrapper">
+                            <br>
+                            <input type="text" id="mls-buy-school-name" class="mls-field" name="mls-buy-school-name" placeholder="Naziv obrazovne ustanove">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-50">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-education-area">Oblast obrazovanja</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <select name="mls-buy-education-area" class="mls-field" id="mls-buy-education-area" required>
+                                <option value="">Izaberite</option>
+                                <option value="Arheologija">Arheologija</option>
+                                <option value="ArhitekturaUrbanizam">Arhitektura/Urbanizam</option>
+                                <option value="BiologijaEkologija">Biologija/Ekologija</option>
+                                <option value="DefektologijaSocijalni">Defektologija/socijalni rad</option>
+                                <option value="DramskeMuzicka">Dramske umetnosti/Muzička umetnost</option>
+                                <option value="EkonomijaMenadzent">Ekonomija/menadžent</option>
+                                <option value="Elektrotehnika">Elektrotehnika</option>
+                                <option value="Farmacija">Farmacija</option>
+                                <option value="FilologijaKnjizevnost">Filologija/književnost</option>
+                                <option value="Filozofija">Filozofija</option>
+                                <option value="FizickaKultura">Fizička kultura</option>
+                                <option value="Geografija">Geografija</option>
+                                <option value="GradjevinaGeodezija">Građevina/Geodezija</option>
+                                <option value="Hemija">Hemija</option>
+                                <option value="HotelijerstvoRestoraterstvo">Hotelijerstvo/restoraterstvo</option>
+                                <option value="InformacioneTehnologije">Informatika/Informacione tehnologije</option>
+                                <option value="IstorijaEtnologija">Istorija/etnologija</option>
+                                <option value="LikovnaPrimenjenaUmetnost">Likovne umetnosti/Primenjene umetnosti</option>
+                                <option value="Masinstvo">Mašinstvo</option>
+                                <option value="Matematika">Matematika</option>
+                                <option value="MedicinaStomatologija">Medicina/Stomatologija</option>
+                                <option value="NovinarstvoKomunikacije">Novinarstvo/Komunikacije</option>
+                                <option value="ObrazovanjePedagogija">Obrazovanje/Pedagogija</option>
+                                <option value="Ostalo">Ostalo</option>
+                                <option value="PolitickeNauke">Političke nauke</option>
+                                <option value="PoljoprivredaSumarstvo">Poljoprivreda/Šumarstvo</option>
+                                <option value="Pravo">Pravo</option>
+                                <option value="Psihologija">Psihologija</option>
+                                <option value="RudarstvoGeologija">Rudarstvo/geologija</option>
+                                <option value="SaobracajLogistika">Saobraćaj/Logistika</option>
+                                <option value="Sociologija">Sociologija</option>
+                                <option value="TehnologijaMetalurgija">Tehnologija/metalurgija</option>
+                                <option value="Turizam">Turizam</option>
+                                <option value="Veterina">Veterina</option>
+                                <option value="VojskaPolicijaKriminalistika">Vojska/Policija/Kriminalistika</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mls-w-50">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-year-graduated">Smer</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <input type="text" id="mls-buy-year-graduated" class="mls-field" name="mls-buy-year-graduated">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-50">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-education-year">Oblast obrazovanja</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <select name="mls-buy-education-year" class="mls-field" id="mls-buy-education-year" required>
+                                <option value="">Izaberite</option>
+                                <option value="JosUvekStudiram">Još uvek studiram</option>
+								<?php
+								$current_year = (int) date( 'Y' );
+								$oldest_year  = 1970;
+								for ( $i = $current_year; $i >= $oldest_year; $i -- ) {
+									echo '<option value="' . $i . '">' . $i . '</option>';
+								}
+								?>
+                                <option value="Pre1970">Pre 1970</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mls-w-50">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-diploma-name">Stečeno zvanje</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <input type="text" id="mls-buy-diploma-name" class="mls-field" name="mls-buy-diploma-name">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-additional-information">Dodatne informacije</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <textarea name="mls-buy-additional-information" id="mls-buy-additional-information" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mls-row-form">
+                <div class="mls-w-50">
+                    <div class="mls-field-wrapper">
+                        <h4>Znanje stranih jezika</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mls-buy-foreign-lang-wrapper">
+                <div class="mls-row-form">
+                    <div class="mls-w-50">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-foreign-lang">Strani jezik koji poznajete</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <input type="text" id="mls-buy-foreign-lang" class="mls-field" name="mls-buy-foreign-lang">
+                        </div>
+                    </div>
+
+                    <div class="mls-w-50">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-lang-level">Nivo Znanja</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <select name="mls-buy-lang-level" class="mls-field" id="mls-buy-lang-level" required>
+                                <option value="">Izaberite</option>
+                                <option value="Osnovni">Osnovni</option>
+                                <option value="Srednji">Srednji</option>
+                                <option value="Napredni">Napredni</option>
+                                <option value="Maternji">Maternji</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-foreign-lang-additional">Ako ste pohađali, naziv kursa koji ste završili, diplomu koji imate, itd.</label>
+				            <?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <input type="text" id="mls-buy-foreign-lang-additional" class="mls-field" name="mls-buy-foreign-lang-additional">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mls-row-form">
+                <div class="mls-w-50">
+                    <div class="mls-field-wrapper">
+                        <h4>Kursevi i obuke</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mls-buy-finished-courses-wrapper">
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-finished-courses">Završen specijalistički kurs ili obuka</label>
+					        <?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <input type="text" id="mls-buy-finished-courses" class="mls-field" name="mls-buy-finished-courses" placeholder="Upišite naziv specijalističkog kursa ili obuke koje ste završili">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mls-row-form">
+                <div class="mls-w-50">
+                    <div class="mls-field-wrapper">
+                        <h4>Veštine</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mls-buy-skills-wrapper">
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-skills">Veštine koje posedujete</label>
+					        <?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <input type="text" id="mls-buy-skills" class="mls-field" name="mls-buy-skills" placeholder="Npr. pregovaranje, vođenje timova...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mls-row-form">
+                <div class="mls-w-50">
+                    <div class="mls-field-wrapper">
+                        <h4>Dodatni opis</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mls-buy-skills-wrapper">
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-buy-additional-description">Dodatni opis</label>
+					        <?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <textarea name="mls-buy-additional-description" id="mls-buy-additional-description" rows="5"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="mls-row-form">
                 <div class="mls-w-100">
                     <button type="button" id="mls-back-to-first-load-jobs-buy">Prethodna</button>

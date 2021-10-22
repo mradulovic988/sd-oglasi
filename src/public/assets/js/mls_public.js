@@ -444,6 +444,26 @@ if (document.body.classList.contains('logged-in')) {
         });
     }
 
+    /**
+     * Education on Trazim posao
+     */
+    const addEducation = {
+        getBtn: document.querySelectorAll('.mls-btn-orange'),
+        getArea: document.querySelector('.mls-buy-education-wrapper'),
+        educationProcess: function () {
+            this.getBtn.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (this.getArea.style.display == 'block') {
+                        this.getArea.style.display = 'none';
+                    } else {
+                        this.getArea.style.display = 'block';
+                    }
+                });
+            });
+        }
+    };
+    addEducation.educationProcess();
+
 }
 
 /**

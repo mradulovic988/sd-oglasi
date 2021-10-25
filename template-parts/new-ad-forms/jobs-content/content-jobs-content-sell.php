@@ -20,16 +20,19 @@ $_html   = new Mls_Html();
                 <div class="mls-field-wrapper">
                     <!--                <label for="mls-category">Odaberi Kategoriju *</label>-->
 					<?php
+
 					$args               = array(
-						'parent'       => 655,
+						'child_of'     => 655,
 						'taxonomy'     => 'poslovi',
 						'hide_empty'   => false,
-						'hierarchical' => 1
+						'hierarchical' => 1,
 					);
 					$category_tax_terms = get_categories( $args );
+					//					echo '<pre>', var_dump( $category_tax_terms ), '</pre>';
 					foreach ( $category_tax_terms as $category_tax_term ) {
-						echo '<a id="mls-category-terms" class="' . $category_tax_term->term_id . '" disabled>' . $category_tax_term->name . '</a><span>(' . $category_tax_term->count . ')</span><br>';
+						echo '<a id="mls-category-terms" data-cat-parent="' . $category_tax_term->category_parent . '" data-parent="' . $category_tax_term->parent . '" class="' . $category_tax_term->term_id . '" disabled>' . $category_tax_term->name . '</a><span>(' . $category_tax_term->count . ')</span><br>';
 					}
+
 					?>
                     <input type="hidden" value="" name="mls-get-categories-jobs" id="mls-get-categories-jobs">
                 </div>
@@ -228,6 +231,10 @@ $_html   = new Mls_Html();
 							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
                             <select name="mls-buy-number-people" class="mls-field mls-disable" id="mls-buy-number-people">
                                 <option value="">- Izaberite -</option>
+                                <option value="1">1</option>
+                                <option value="od2do5">od 2 do 5</option>
+                                <option value="od5do10">od 5 do 10</option>
+                                <option value="preko10">preko 10</option>
                             </select>
                         </div>
                     </div>
@@ -239,7 +246,10 @@ $_html   = new Mls_Html();
                             <label for="mls-buy-working-hours">Radno vreme</label>
 							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
                             <select name="mls-buy-working-hours" class="mls-field mls-disable" id="mls-buy-working-hours">
-                                <option value="">- Izaberite -</option>
+                                <option value="parSatiDnevno">Par sati dnevno</option>
+                                <option value="parSatiNedeljno">Par sati nedeljno</option>
+                                <option value="polaRadnogVremena">Pola radnog vremena</option>
+                                <option value="punoRadnoVreme">Puno radno vreme</option>
                             </select>
                         </div>
                     </div>
@@ -252,6 +262,10 @@ $_html   = new Mls_Html();
 							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
                             <select name="mls-buy-period-engagement" class="mls-field mls-disable" id="mls-buy-period-engagement">
                                 <option value="">- Izaberite -</option>
+                                <option value="zaposlenjePrekoZadruge">Zaposlenje preko zadruge</option>
+                                <option value="zaposlenjeZaStalno">Zaposlenje za stalno</option>
+                                <option value="honorarniPosao">Honorarni posao</option>
+                                <option value="kratkorocnoZaposlenje">Kratkorocno zaposlenje</option>
                             </select>
                         </div>
                     </div>
@@ -260,10 +274,16 @@ $_html   = new Mls_Html();
                 <div class="mls-row-form">
                     <div class="mls-w-50">
                         <div class="mls-field-wrapper">
-                            <label for="mls-buy-qualification">KVALIFIKACIJE</label>
+                            <label for="mls-buy-qualification">Kvalifikacije</label>
 							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
                             <select name="mls-buy-qualification" class="mls-field mls-disable" id="mls-buy-qualification">
                                 <option value="">- Izaberite -</option>
+                                <option value="osnovnaSkola">Osnovna škola</option>
+                                <option value="srednjaSkola">Srednja škola</option>
+                                <option value="visaFakultet">Viša/Fakultet</option>
+                                <option value="masterDoktor">Master/Doktor</option>
+                                <option value="kurs">Kurs</option>
+                                <option value="bezKvalifikacije">Bez kvalifikacije</option>
                             </select>
                         </div>
                     </div>
@@ -272,10 +292,15 @@ $_html   = new Mls_Html();
                 <div class="mls-row-form">
                     <div class="mls-w-50">
                         <div class="mls-field-wrapper">
-                            <label for="mls-buy-experience">ISKUSTVO</label>
+                            <label for="mls-buy-experience">Iskustvo</label>
 							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
                             <select name="mls-buy-experience" class="mls-field mls-disable" id="mls-buy-experience">
                                 <option value="">- Izaberite -</option>
+                                <option value="bezIskustva">Bez iskustva</option>
+                                <option value="1-3">1-3 godine</option>
+                                <option value="2-5">2-5 godine</option>
+                                <option value="5-10">5-10 godine</option>
+                                <option value="preko10">Preko 10 godina</option>
                             </select>
                         </div>
                     </div>
@@ -299,7 +324,7 @@ $_html   = new Mls_Html();
                     <div class="mls-w-100">
                         <div class="mls-field-wrapper">
                             <label for="mls-buy-job-description">Unesite opis posla</label>
-							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+							<?php echo $_html->mls_html_tooltip( 'Opsirniji opis poslovanja, potrebnim kvalifikacijama, zaduzenjima, i svime ostalim' ); ?>
                             <textarea id="mls-buy-job-description" class="mls-field" name="mls-buy-job-description" rows="3" required></textarea>
                         </div>
                     </div>
@@ -315,7 +340,7 @@ $_html   = new Mls_Html();
                     <div class="mls-w-100">
                         <div class="mls-field-wrapper">
                             <label for="mls-buy-practice">Znanje i veštine</label>
-							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+							<?php echo $_html->mls_html_tooltip( 'tekst o opisu zahteva radnog mesta' ); ?>
                             <textarea id="mls-buy-practice" class="mls-field" name="mls-buy-practice" rows="3" required></textarea>
                         </div>
                     </div>
@@ -325,7 +350,7 @@ $_html   = new Mls_Html();
                     <div class="mls-w-100">
                         <div class="mls-field-wrapper">
                             <label for="mls-buy-work-experience">Radno iskustvo</label>
-							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+							<?php echo $_html->mls_html_tooltip( 'kakvo radno iskustvo je potrebo za poziciju na poslu.' ); ?>
                             <textarea id="mls-buy-work-experience" class="mls-field" name="mls-buy-work-experience" rows="3" required></textarea>
                         </div>
                     </div>
@@ -335,7 +360,7 @@ $_html   = new Mls_Html();
                     <div class="mls-w-100">
                         <div class="mls-field-wrapper">
                             <label for="mls-buy-candidate-profile">Profil kandidata</label>
-							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+							<?php echo $_html->mls_html_tooltip( 'licne osobine koje kandidat treba da poseduje.' ); ?>
                             <textarea id="mls-buy-candidate-profile" class="mls-field" name="mls-buy-candidate-profile" rows="3" required></textarea>
                         </div>
                     </div>
@@ -345,7 +370,7 @@ $_html   = new Mls_Html();
                     <div class="mls-w-100">
                         <div class="mls-field-wrapper">
                             <label for="mls-buy-offer">Nudimo</label>
-							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+							<?php echo $_html->mls_html_tooltip( 'Šta nudi poslodavac kao uslove rada.' ); ?>
                             <textarea id="mls-buy-offer" class="mls-field" name="mls-buy-offer" rows="3" required></textarea>
                         </div>
                     </div>
@@ -355,7 +380,7 @@ $_html   = new Mls_Html();
                     <div class="mls-w-100">
                         <div class="mls-field-wrapper">
                             <label for="mls-buy-notice">Napomena</label>
-							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+							<?php echo $_html->mls_html_tooltip( 'nesto sto napominje poslodavac' ); ?>
                             <textarea id="mls-buy-notice" class="mls-field" name="mls-buy-notice" rows="3" required></textarea>
                         </div>
                     </div>
@@ -366,7 +391,7 @@ $_html   = new Mls_Html();
                         <div class="mls-field-wrapper mls-align-right">
                             <input type="checkbox" id="mls-sell-choose-position-display" class="" name="mls-sell-choose-position-display">
                             <label for="mls-sell-choose-position-display">Prikazuj oglas u listi "Vidi sve oglase ovog oglašivača"</label>
-				            <?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
                         </div>
                     </div>
                 </div>

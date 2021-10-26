@@ -28,7 +28,7 @@ $_html   = new Mls_Html();
 					);
 					$category_tax_terms = get_categories( $args );
 					foreach ( $category_tax_terms as $category_tax_term ) {
-						echo '<a id="mls-category-terms" class="' . $category_tax_term->term_id . '" disabled>' . $category_tax_term->name . '</a><span>(' . $category_tax_term->count . ')</span><br>';
+						echo '<a id="mls-buy-category-terms" class="' . $category_tax_term->term_id . '" disabled>' . $category_tax_term->name . '</a><span>(' . $category_tax_term->count . ')</span><br>';
 					}
 					?>
                     <input type="hidden" value="" name="mls-get-categories-jobs" id="mls-get-categories-jobs">

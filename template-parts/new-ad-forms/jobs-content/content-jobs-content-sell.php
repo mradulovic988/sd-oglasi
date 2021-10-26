@@ -30,7 +30,7 @@ $_html   = new Mls_Html();
 					$category_tax_terms = get_categories( $args );
 					//					echo '<pre>', var_dump( $category_tax_terms ), '</pre>';
 					foreach ( $category_tax_terms as $category_tax_term ) {
-						echo '<a id="mls-category-terms" data-cat-parent="' . $category_tax_term->category_parent . '" data-parent="' . $category_tax_term->parent . '" class="' . $category_tax_term->term_id . '" disabled>' . $category_tax_term->name . '</a><span>(' . $category_tax_term->count . ')</span><br>';
+						echo '<a id="mls-sell-category-terms" data-cat-parent="' . $category_tax_term->category_parent . '" data-parent="' . $category_tax_term->parent . '" class="' . $category_tax_term->term_id . '" disabled>' . $category_tax_term->name . '</a>';
 					}
 
 					?>

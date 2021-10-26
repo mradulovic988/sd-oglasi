@@ -3,6 +3,7 @@
 /**
  * Registration page
  */
+
 if (document.body.classList.contains('page-id-43')) {
 
     const password = document.getElementById("mls-password");
@@ -279,16 +280,16 @@ if (document.body.classList.contains('logged-in')) {
          *
          * @type {NodeListOf<Element>}
          */
-        const homeCategoryList = document.querySelectorAll('#mls-category-terms');
-        let prevStyle = 0;
-        for (let i = 0; i < homeCategoryList.length; i++) {
-            homeCategoryList[i].addEventListener('click', () => {
-                homeCategoryList[prevStyle].removeAttribute('style');
-                homeCategoryList[i].setAttribute('style', 'background: #3d5b9a;color: #fff;')
-                prevStyle = i;
+        const homeCategoryListSell = document.querySelectorAll('#mls-sell-category-terms');
+        let prevStyleSell = 0;
+        for (let i = 0; i < homeCategoryListSell.length; i++) {
+            homeCategoryListSell[i].addEventListener('click', () => {
+                homeCategoryListSell[prevStyleSell].removeAttribute('style');
+                homeCategoryListSell[i].setAttribute('style', 'background: #3d5b9a;color: #fff;')
+                prevStyleSell = i;
 
-                let getClassName = homeCategoryList[i].className;
-                document.querySelector('#mls-get-categories').value = getClassName;
+                let getClassNameSell = homeCategoryListSell[i].className;
+                document.querySelector('#mls-get-categories').value = getClassNameSell;
                 document.querySelector('#mls-next-to-second-load').style.display = 'block';
             });
         }
@@ -463,6 +464,23 @@ if (document.body.classList.contains('logged-in')) {
         }
     };
     addEducation.educationProcess();
+
+    const categoryOrder = {
+        categories: document.querySelectorAll('#mls-sell-category-terms'),
+        catProcessData: function () {
+            this.categories.forEach(data => {
+                data.addEventListener('click', () => {
+                    let getData = data.dataset.parent;
+                    console.log(getData);
+                });
+            });
+        }
+    };
+
+    categoryOrder?.categories.forEach(cat => {
+        cat.dataset.parent !== '655' ? cat.style.display = 'none' : cat.style.display = 'block';
+    });
+    categoryOrder?.catProcessData();
 
 }
 

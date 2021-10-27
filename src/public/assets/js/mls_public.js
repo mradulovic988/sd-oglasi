@@ -465,18 +465,31 @@ if (document.body.classList.contains('logged-in')) {
     };
     addEducation.educationProcess();
 
+    /**
+     * Category order
+     *
+     * @type {{categories: NodeListOf<Element>, catProcessData: categoryOrder.catProcessData}}
+     */
     const categoryOrder = {
-        categories: document.querySelectorAll('#mls-sell-category-terms'),
+        categories: document.querySelectorAll('div#mls-sell-category-terms'),
+        secondLevel: document.querySelector('#mls-second-level-wrapper'),
         catProcessData: function () {
             this.categories.forEach(data => {
                 data.addEventListener('click', () => {
-                    let getData = data.dataset.parent;
-                    console.log(getData);
+                    let getData = data.dataset.termId;
+
+                    this.categories.forEach(p => {
+                        if (getData === p.dataset.parent) {
+                            p.classList.add('mls-second-level');
+                            this.secondLevel.innerHTML += p.innerHTML;
+                        }
+                    });
                 });
             });
         }
     };
 
+    // Hide all subcategories
     categoryOrder?.categories.forEach(cat => {
         cat.dataset.parent !== '655' ? cat.style.display = 'none' : cat.style.display = 'block';
     });

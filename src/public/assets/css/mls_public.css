@@ -668,6 +668,17 @@ a#mls-category-terms:hover, a#mls-category-terms:active, a#mls-category-terms:fo
     cursor: pointer;
 }
 
+a#mls-sell-category-terms, div#mls-sell-category-terms {
+    width: 100%;
+    color: #3d5b9a;
+}
+
+div#mls-sell-category-terms:hover, div#mls-sell-category-terms:active, div#mls-sell-category-terms:focus {
+    cursor: pointer;
+    background: #3d5b9a;
+    color: #fff;
+}
+
 .mls-row-70 {
     display: inline-block;
     width: 69%;

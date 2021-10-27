@@ -15,7 +15,7 @@ $_html   = new Mls_Html();
 
         <!-- Categories - First page -->
         <div id="mls-first-load-jobs">
-            <div class="mls-row-70">
+            <div class="mls-row-30">
                 <h4 class="mls-pt-20 mls-pb-20 mls-pl-5">Odaberi Kategoriju</h4>
                 <div class="mls-field-wrapper">
                     <!--                <label for="mls-category">Odaberi Kategoriju *</label>-->
@@ -30,12 +30,16 @@ $_html   = new Mls_Html();
 					$category_tax_terms = get_categories( $args );
 					//					echo '<pre>', var_dump( $category_tax_terms ), '</pre>';
 					foreach ( $category_tax_terms as $category_tax_term ) {
-						echo '<a id="mls-sell-category-terms" data-cat-parent="' . $category_tax_term->category_parent . '" data-parent="' . $category_tax_term->parent . '" class="' . $category_tax_term->term_id . '" disabled>' . $category_tax_term->name . '</a>';
+						echo '<div data-term-id="' . $category_tax_term->term_id . '"  data-parent="' . $category_tax_term->parent . '" class="mls-sell-category-wrapper"<a id="mls-sell-category-terms" data-cat-parent="' . $category_tax_term->category_parent . '" data-parent="' . $category_tax_term->parent . '" class="' . $category_tax_term->term_id . '" disabled>' . $category_tax_term->name . '</a></div>';
 					}
 
 					?>
                     <input type="hidden" value="" name="mls-get-categories-jobs" id="mls-get-categories-jobs">
                 </div>
+            </div>
+
+            <div class="mls-row-30">
+                <div id="mls-second-level-wrapper"></div>
             </div>
             <div class="mls-row-30">
                 <button type="button" id="mls-next-to-second-load-jobs" class="mls-mt-20">Dalje</button>

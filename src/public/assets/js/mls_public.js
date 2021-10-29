@@ -481,7 +481,14 @@ if (document.body.classList.contains('logged-in')) {
                     this.categories.forEach(p => {
                         if (getData === p.dataset.parent) {
                             p.classList.add('mls-second-level');
-                            this.secondLevel.innerHTML += p.innerHTML;
+
+                            let getSecondLevel = document.querySelectorAll('.mls-second-level');
+                            getSecondLevel.forEach(level => {
+                                if (p.classList.contains('mls-second-level')) {
+                                    level.style.display = 'block';
+                                    this.secondLevel.appendChild(level);
+                                }
+                            });
                         }
                     });
                 });

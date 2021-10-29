@@ -1020,3 +1020,17 @@ input.mls-favorites-ads-submit:hover, input.mls-favorites-ads-submit:active, inp
 .mls-buy-education-wrapper {
     display: none;
 }
+
+div#mls-second-level-wrapper {
+    text-align: left;
+    padding: 70px 40px;
+}
+
+#mls-first-load-jobs {
+    display: flex;
+}
+
+button#mls-next-to-second-load-jobs {
+    position: absolute;
+    bottom: 0;
+}

@@ -657,11 +657,12 @@ input#mls-nondefault, input#mls-default-open {
     text-align: left;
 }
 
-a#mls-category-terms {
+a#mls-category-terms, a#mls-buy-category-terms {
     padding: 5px;
 }
 
-a#mls-category-terms:hover, a#mls-category-terms:active, a#mls-category-terms:focus {
+a#mls-category-terms:hover, a#mls-category-terms:active, a#mls-category-terms:focus,
+a#mls-buy-category-terms:hover,  a#mls-buy-category-terms:active,  a#mls-buy-category-terms:focus {
     padding: 5px;
     background: #3d5b9a;
     color: #fff;

@@ -276,7 +276,7 @@ if (document.body.classList.contains('logged-in')) {
         }
 
         /**
-         * Getting values from the category list to the hidden input field
+         * Getting values from the category list on Sell page to the hidden input field
          *
          * @type {NodeListOf<Element>}
          */
@@ -290,6 +290,40 @@ if (document.body.classList.contains('logged-in')) {
 
                 let getClassNameSell = homeCategoryListSell[i].className;
                 document.querySelector('#mls-get-categories').value = getClassNameSell;
+                document.querySelector('#mls-next-to-second-load').style.display = 'block';
+            });
+        }
+
+        /**
+         * Getting values from the category list on Home page to the hidden input field
+         */
+        const homeCategoryList = document.querySelectorAll('#mls-category-terms');
+        let prevStyle = 0;
+        for (let i = 0; i < homeCategoryList.length; i++) {
+            homeCategoryList[i].addEventListener('click', () => {
+                homeCategoryList[prevStyle].removeAttribute('style');
+                homeCategoryList[i].setAttribute('style', 'background: #3d5b9a;color: #fff;')
+                prevStyle = i;
+
+                let getClassName = homeCategoryList[i].className;
+                document.querySelector('#mls-get-categories').value = getClassName;
+                document.querySelector('#mls-next-to-second-load').style.display = 'block';
+            });
+        }
+
+        /**
+         * Getting values from the category list on Buy page to the hidden input field
+         */
+        const homeCategoryListBuy = document.querySelectorAll('#mls-buy-category-terms');
+        let prevStyleBuy = 0;
+        for (let i = 0; i < homeCategoryListBuy.length; i++) {
+            homeCategoryListBuy[i].addEventListener('click', () => {
+                homeCategoryListBuy[prevStyleBuy].removeAttribute('style');
+                homeCategoryListBuy[i].setAttribute('style', 'background: #3d5b9a;color: #fff;')
+                prevStyleBuy = i;
+
+                let getClassNameBuy = homeCategoryListBuy[i].className;
+                document.querySelector('#mls-get-categories').value = getClassNameBuy;
                 document.querySelector('#mls-next-to-second-load').style.display = 'block';
             });
         }
@@ -486,6 +520,7 @@ if (document.body.classList.contains('logged-in')) {
                             getSecondLevel.forEach(level => {
                                 if (p.classList.contains('mls-second-level')) {
                                     level.style.display = 'block';
+
                                     this.secondLevel.appendChild(level);
                                 }
                             });

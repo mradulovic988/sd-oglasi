@@ -524,6 +524,7 @@ if (document.body.classList.contains('logged-in')) {
                             getSecondLevel.forEach(level => {
                                 if (p.classList.contains('mls-second-level')) {
                                     level.style.cssText = 'display:block';
+
                                     this.secondLevel.appendChild(level);
                                 }
                             });
@@ -540,6 +541,42 @@ if (document.body.classList.contains('logged-in')) {
     });
     categoryOrder?.catProcessData();
 
+    const categoryOrderAds = {
+        categories: document.querySelectorAll('div#mls-ads-category-terms'),
+        secondLevel: document.querySelector('#mls-ads-second-level-wrapper'),
+        thirdLevel: document.querySelector('#mls-ads-third-level-wrapper'),
+        fourthLevel: document.querySelector('#mls-ads-fourth-level-wrapper'),
+        catProcessData: function () {
+            this.categories.forEach(data => {
+                data.addEventListener('click', () => {
+                    let getData = data.dataset.termId;
+
+                    if (!data.classList.contains('mls-second-level')) {
+                        this.secondLevel.innerHTML = '';
+                    }
+
+                    this.categories.forEach(p => {
+                        if (getData === p.dataset.parent) {
+                            p.classList.add('mls-second-level');
+
+                            let getSecondLevel = document.querySelectorAll('.mls-second-level');
+                            getSecondLevel.forEach(level => {
+                                if (p.classList.contains('mls-second-level')) {
+                                    level.style.cssText = 'display:block';
+
+                                    this.secondLevel.appendChild(level);
+                                }
+                            });
+                        }
+                    });
+                });
+            });
+        }
+    };
+    categoryOrderAds?.categories.forEach(cat => {
+        cat.dataset.parent !== '0' ? cat.style.display = 'none' : cat.style.display = 'block';
+    });
+    categoryOrderAds?.catProcessData();
 }
 
 /**

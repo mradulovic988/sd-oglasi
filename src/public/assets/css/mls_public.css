@@ -674,7 +674,8 @@ a#mls-sell-category-terms, div#mls-sell-category-terms {
     color: #3d5b9a;
 }
 
-div#mls-sell-category-terms:hover, div#mls-sell-category-terms:active, div#mls-sell-category-terms:focus {
+div#mls-sell-category-terms:hover, div#mls-sell-category-terms:active, div#mls-sell-category-terms:focus,
+div#mls-ads-category-terms:hover, div.mls-ads-category-terms:active, div#mls-ads-category-terms:focus {
     cursor: pointer;
     background: #3d5b9a;
     color: #fff;
@@ -689,6 +690,12 @@ div#mls-sell-category-terms:hover, div#mls-sell-category-terms:active, div#mls-s
 .mls-row-30 {
     display: inline-block;
     width: 29%;
+    text-align: right;
+}
+
+.mls-row-24 {
+    display: inline-block;
+    width: 24%;
     text-align: right;
 }
 
@@ -1022,7 +1029,7 @@ input.mls-favorites-ads-submit:hover, input.mls-favorites-ads-submit:active, inp
     display: none;
 }
 
-div#mls-second-level-wrapper {
+div#mls-second-level-wrapper, div#mls-ads-second-level-wrapper, div#mls-ads-third-level-wrapper, div#mls-ads-fourth-level-wrapper {
     text-align: left;
     position: relative;
     top: 70px;

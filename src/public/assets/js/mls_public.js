@@ -276,6 +276,36 @@ if (document.body.classList.contains('logged-in')) {
         }
 
         /**
+         * Toggle between categories and the rest of the form for the Ads page ads
+         */
+        if (document.querySelector('#mls-first-load-ads')) {
+            document.querySelector('#mls-next-to-second-load-ads').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-ads').style.display = 'none';
+                document.querySelector('#mls-third-load-ads').style.display = 'none';
+                document.querySelector('#mls-second-load-ads').style.display = 'block';
+            });
+
+            document.querySelector('#mls-back-to-first-ads').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-ads').style.display = 'block';
+                document.querySelector('#mls-second-load-ads').style.display = 'none';
+                document.querySelector('#mls-third-load-ads').style.display = 'none';
+            });
+
+            document.querySelector('#mls-back-to-second-ads').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-ads').style.display = 'none';
+                document.querySelector('#mls-second-load-ads').style.display = 'block';
+                document.querySelector('#mls-third-load-ads').style.display = 'none';
+            });
+
+            document.querySelector('#mls-next-to-third-ads').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-ads').style.display = 'none';
+                document.querySelector('#mls-second-load-ads').style.display = 'none';
+                document.querySelector('#mls-third-load-ads').style.display = 'block';
+            });
+
+        }
+
+        /**
          * Getting values from the category list on Sell page to the hidden input field
          *
          * @type {NodeListOf<Element>}
@@ -577,6 +607,22 @@ if (document.body.classList.contains('logged-in')) {
         cat.dataset.parent !== '0' ? cat.style.display = 'none' : cat.style.display = 'block';
     });
     categoryOrderAds?.catProcessData();
+
+    /**
+     * Ads form - Sell/Buy toggle
+     */
+    const sellBuyToggle = {
+        sell: document.querySelector('#mls-ads-sell'),
+        buy: document.querySelector('#mls-ads-buy'),
+        priceWrapper: document.querySelector('#mls-ads-price-wrapper'),
+        sellBuyProgress: function () {
+            this.sell.addEventListener('click', () => this.priceWrapper.style.display = 'block');
+            this.buy.addEventListener('click', () => this.priceWrapper.style.display = 'none');
+        }
+    };
+    if (sellBuyToggle?.sell) {
+        sellBuyToggle?.sellBuyProgress();
+    }
 }
 
 /**

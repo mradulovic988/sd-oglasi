@@ -621,6 +621,12 @@ li#menu-item-140 a.menu-link:hover {
     }
 }
 
+.mls-w-10 {
+    width: 10% !important;
+    text-align: left;
+    padding: 20px;
+}
+
 input.mls-field, select.mls-field {
     width: 100%
 }
@@ -629,7 +635,7 @@ input#mls-nondefault, input#mls-default-open {
     margin: 5px;
 }
 
-#mls-second-load, #mls-third-load, #mls-second-load-jobs, #mls-third-load-jobs, #mls-second-load-jobs-buy, #mls-third-load-jobs-buy {
+#mls-second-load, #mls-third-load, #mls-second-load-jobs, #mls-third-load-jobs, #mls-second-load-jobs-buy, #mls-third-load-jobs-buy, #mls-second-load-ads, #mls-third-load-ads {
     display: none
 }
 
@@ -662,20 +668,21 @@ a#mls-category-terms, a#mls-buy-category-terms {
 }
 
 a#mls-category-terms:hover, a#mls-category-terms:active, a#mls-category-terms:focus,
-a#mls-buy-category-terms:hover, a#mls-buy-category-terms:active, a#mls-buy-category-terms:focus {
+a#mls-buy-category-terms:hover, a#mls-buy-category-terms:active, a#mls-buy-category-terms:focus,
+a#mls-sell-category-terms:hover, a#mls-sell-category-terms:active, a#mls-sell-category-terms:focus {
     padding: 5px;
     background: #3d5b9a;
     color: #fff;
     cursor: pointer;
 }
 
-a#mls-sell-category-terms, div#mls-sell-category-terms {
+a#mls-sell-category-terms, div#mls-sell-category-terms, a#mls-sell-category-terms, div#mls-sell-category-terms {
     width: 100%;
     color: #3d5b9a;
 }
 
 div#mls-sell-category-terms:hover, div#mls-sell-category-terms:active, div#mls-sell-category-terms:focus,
-div#mls-ads-category-terms:hover, div.mls-ads-category-terms:active, div#mls-ads-category-terms:focus {
+div#mls-ads-category-terms:hover, div#mls-ads-category-terms:active, div#mls-ads-category-terms:focus {
     cursor: pointer;
     background: #3d5b9a;
     color: #fff;
@@ -717,6 +724,10 @@ div#mls-first-load {
 
 .mls-pt-20 {
     padding-top: 20px
+}
+
+.mls-pt-35 {
+    padding-top: 35px
 }
 
 .mls-pb-20 {
@@ -953,6 +964,10 @@ input.mls-favorites-ads-submit:hover, input.mls-favorites-ads-submit:active, inp
 
 .mls-blur-1 {
     filter: blur(1px)
+}
+
+.mls-small-text {
+    font-size: 12px;
 }
 
 /*********************************************

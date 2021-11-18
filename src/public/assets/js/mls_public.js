@@ -571,19 +571,32 @@ if (document.body.classList.contains('logged-in')) {
     });
     categoryOrder?.catProcessData();
 
+    /**
+     * Category order on Ads
+     *
+     * @type {{secondLevel: Element, thirdLevel: Element, fourthLevel: Element, categories: NodeListOf<Element>, catProcessData: categoryOrderAds.catProcessData}}
+     */
     const categoryOrderAds = {
         categories: document.querySelectorAll('div#mls-ads-category-terms'),
-        secondLevel: document.querySelector('#mls-ads-second-level-wrapper'),
-        thirdLevel: document.querySelector('#mls-ads-third-level-wrapper'),
-        fourthLevel: document.querySelector('#mls-ads-fourth-level-wrapper'),
-        catProcessData: function () {
+        secondLevelSection: document.querySelector('#mls-ads-second-level-wrapper'),
+        thirdLevelSection: document.querySelector('#mls-ads-third-level-wrapper'),
+        fourthLevelSection: document.querySelector('#mls-ads-fourth-level-wrapper'),
+        catProcessDataSecond: function () {
             this.categories.forEach(data => {
                 data.addEventListener('click', () => {
                     let getData = data.dataset.termId;
 
-                    if (!data.classList.contains('mls-second-level')) {
-                        this.secondLevel.innerHTML = '';
-                    }
+                    // if (!data.classList.contains('mls-second-level')) {
+                    //     this.secondLevelSection.innerHTML = '';
+                    // }
+                    //
+                    // if (!data.classList.contains('mls-third-level')) {
+                    //     this.thirdLevelSection.innerHTML = '';
+                    // }
+                    //
+                    // if (!data.classList.contains('mls-fourth-level')) {
+                    //     this.fourthLevelSection.innerHTML = '';
+                    // }
 
                     this.categories.forEach(p => {
                         if (getData === p.dataset.parent) {
@@ -594,8 +607,69 @@ if (document.body.classList.contains('logged-in')) {
                                 if (p.classList.contains('mls-second-level')) {
                                     level.style.cssText = 'display:block';
 
-                                    this.secondLevel.appendChild(level);
+                                    this.secondLevelSection.appendChild(level);
                                 }
+                                
+                                level.addEventListener('click', () => {
+
+                                    let secondLevelClass = document.querySelectorAll('.mls-second-level');
+                                    secondLevelClass.forEach(t => {
+                                        t.classList.remove('mls-second-level');
+                                    });
+
+                                    secondLevelClass.forEach(ta => {
+                                        let d = data.dataset.termId;
+                                        if (d !== ta.dataset.parent) {
+                                            ta.classList.add('mls-third-level');
+                                        }
+                                    });
+
+                                    let getThirdLevel = document.querySelectorAll('.mls-third-level');
+                                    getThirdLevel.forEach(tl => {
+                                        if (tl.classList.contains('mls-third-level')) {
+                                            tl.style.cssText = 'display:block';
+
+                                            this.thirdLevelSection.appendChild(tl);
+                                        }
+
+                                        /**
+                                         * Issue with fourth column start here
+                                         *
+                                         *
+                                         */
+                                        tl.addEventListener('click', () => {
+
+                                            let thirdLevelClass = document.querySelectorAll('.mls-third-level');
+                                            thirdLevelClass.forEach(t => {
+                                                t.classList.remove('mls-third-level');
+                                            });
+
+                                            thirdLevelClass.forEach(fa => {
+                                                let f = data.dataset.termId;
+                                                if (f !== fa.dataset.parent) {
+                                                    fa.classList.add('mls-fourth-level');
+                                                }
+                                            });
+
+                                            let getFourthLevel = document.querySelectorAll('.mls-fourth-level');
+                                            getFourthLevel.forEach(fl => {
+                                                if (fl.classList.contains('mls-fourth-level')) {
+                                                    fl.style.cssText = 'display:block';
+
+                                                    this.fourthLevelSection.appendChild(fl);
+                                                }
+
+                                            });
+                                        });
+                                        /**
+                                         *
+                                         *
+                                         * Issue with fourth column end here
+                                         */
+
+
+                                    });
+                                });
                             });
                         }
                     });
@@ -606,7 +680,7 @@ if (document.body.classList.contains('logged-in')) {
     categoryOrderAds?.categories.forEach(cat => {
         cat.dataset.parent !== '0' ? cat.style.display = 'none' : cat.style.display = 'block';
     });
-    categoryOrderAds?.catProcessData();
+    categoryOrderAds?.catProcessDataSecond();
 
     /**
      * Ads form - Sell/Buy toggle

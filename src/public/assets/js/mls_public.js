@@ -306,6 +306,36 @@ if (document.body.classList.contains('logged-in')) {
         }
 
         /**
+         * Toggle between categories and the rest of the form for the Market Ads page ads
+         */
+        if (document.querySelector('#mls-first-load-market-ads')) {
+            document.querySelector('#mls-next-to-second-load-market-ads').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-market-ads').style.display = 'none';
+                document.querySelector('#mls-third-load-market-ads').style.display = 'none';
+                document.querySelector('#mls-second-load-market-ads').style.display = 'block';
+            });
+
+            document.querySelector('#mls-back-to-first-market-ads').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-market-ads').style.display = 'block';
+                document.querySelector('#mls-second-load-market-ads').style.display = 'none';
+                document.querySelector('#mls-third-load-market-ads').style.display = 'none';
+            });
+
+            document.querySelector('#mls-back-to-second-market-ads').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-market-ads').style.display = 'none';
+                document.querySelector('#mls-second-load-market-ads').style.display = 'block';
+                document.querySelector('#mls-third-load-market-ads').style.display = 'none';
+            });
+
+            document.querySelector('#mls-next-to-third-market-ads').addEventListener('click', () => {
+                document.querySelector('#mls-first-load-market-ads').style.display = 'none';
+                document.querySelector('#mls-second-load-market-ads').style.display = 'none';
+                document.querySelector('#mls-third-load-market-ads').style.display = 'block';
+            });
+
+        }
+
+        /**
          * Getting values from the category list on Sell page to the hidden input field
          *
          * @type {NodeListOf<Element>}
@@ -550,6 +580,7 @@ if (document.body.classList.contains('logged-in')) {
                         if (getData === p.dataset.parent) {
                             p.classList.add('mls-second-level');
 
+
                             let getSecondLevel = document.querySelectorAll('.mls-second-level');
                             getSecondLevel.forEach(level => {
                                 if (p.classList.contains('mls-second-level')) {
@@ -560,6 +591,7 @@ if (document.body.classList.contains('logged-in')) {
                             });
                         }
                     });
+
                 });
             });
         }
@@ -576,111 +608,111 @@ if (document.body.classList.contains('logged-in')) {
      *
      * @type {{secondLevel: Element, thirdLevel: Element, fourthLevel: Element, categories: NodeListOf<Element>, catProcessData: categoryOrderAds.catProcessData}}
      */
-    const categoryOrderAds = {
-        categories: document.querySelectorAll('div#mls-ads-category-terms'),
-        secondLevelSection: document.querySelector('#mls-ads-second-level-wrapper'),
-        thirdLevelSection: document.querySelector('#mls-ads-third-level-wrapper'),
-        fourthLevelSection: document.querySelector('#mls-ads-fourth-level-wrapper'),
-        catProcessDataSecond: function () {
-            this.categories.forEach(data => {
-                data.addEventListener('click', () => {
-                    let getData = data.dataset.termId;
-
-                    // if (!data.classList.contains('mls-second-level')) {
-                    //     this.secondLevelSection.innerHTML = '';
-                    // }
-                    //
-                    // if (!data.classList.contains('mls-third-level')) {
-                    //     this.thirdLevelSection.innerHTML = '';
-                    // }
-                    //
-                    // if (!data.classList.contains('mls-fourth-level')) {
-                    //     this.fourthLevelSection.innerHTML = '';
-                    // }
-
-                    this.categories.forEach(p => {
-                        if (getData === p.dataset.parent) {
-                            p.classList.add('mls-second-level');
-
-                            let getSecondLevel = document.querySelectorAll('.mls-second-level');
-                            getSecondLevel.forEach(level => {
-                                if (p.classList.contains('mls-second-level')) {
-                                    level.style.cssText = 'display:block';
-
-                                    this.secondLevelSection.appendChild(level);
-                                }
-                                
-                                level.addEventListener('click', () => {
-
-                                    let secondLevelClass = document.querySelectorAll('.mls-second-level');
-                                    secondLevelClass.forEach(t => {
-                                        t.classList.remove('mls-second-level');
-                                    });
-
-                                    secondLevelClass.forEach(ta => {
-                                        let d = data.dataset.termId;
-                                        if (d !== ta.dataset.parent) {
-                                            ta.classList.add('mls-third-level');
-                                        }
-                                    });
-
-                                    let getThirdLevel = document.querySelectorAll('.mls-third-level');
-                                    getThirdLevel.forEach(tl => {
-                                        if (tl.classList.contains('mls-third-level')) {
-                                            tl.style.cssText = 'display:block';
-
-                                            this.thirdLevelSection.appendChild(tl);
-                                        }
-
-                                        /**
-                                         * Issue with fourth column start here
-                                         *
-                                         *
-                                         */
-                                        tl.addEventListener('click', () => {
-
-                                            let thirdLevelClass = document.querySelectorAll('.mls-third-level');
-                                            thirdLevelClass.forEach(t => {
-                                                t.classList.remove('mls-third-level');
-                                            });
-
-                                            thirdLevelClass.forEach(fa => {
-                                                let f = data.dataset.termId;
-                                                if (f !== fa.dataset.parent) {
-                                                    fa.classList.add('mls-fourth-level');
-                                                }
-                                            });
-
-                                            let getFourthLevel = document.querySelectorAll('.mls-fourth-level');
-                                            getFourthLevel.forEach(fl => {
-                                                if (fl.classList.contains('mls-fourth-level')) {
-                                                    fl.style.cssText = 'display:block';
-
-                                                    this.fourthLevelSection.appendChild(fl);
-                                                }
-
-                                            });
-                                        });
-                                        /**
-                                         *
-                                         *
-                                         * Issue with fourth column end here
-                                         */
-
-
-                                    });
-                                });
-                            });
-                        }
-                    });
-                });
-            });
-        }
-    };
-    categoryOrderAds?.categories.forEach(cat => {
-        cat.dataset.parent !== '0' ? cat.style.display = 'none' : cat.style.display = 'block';
-    });
-    categoryOrderAds?.catProcessDataSecond();
+    // const categoryOrderAds = {
+    //     categories: document.querySelectorAll('div#mls-ads-category-terms'),
+    //     secondLevelSection: document.querySelector('#mls-ads-second-level-wrapper'),
+    //     thirdLevelSection: document.querySelector('#mls-ads-third-level-wrapper'),
+    //     fourthLevelSection: document.querySelector('#mls-ads-fourth-level-wrapper'),
+    //     catProcessDataSecond: function () {
+    //         this.categories.forEach(data => {
+    //             data.addEventListener('click', () => {
+    //                 let getData = data.dataset.termId;
+    //
+    //                 // if (!data.classList.contains('mls-second-level')) {
+    //                 //     this.secondLevelSection.innerHTML = '';
+    //                 // }
+    //                 //
+    //                 // if (!data.classList.contains('mls-third-level')) {
+    //                 //     this.thirdLevelSection.innerHTML = '';
+    //                 // }
+    //                 //
+    //                 // if (!data.classList.contains('mls-fourth-level')) {
+    //                 //     this.fourthLevelSection.innerHTML = '';
+    //                 // }
+    //
+    //                 this.categories.forEach(p => {
+    //                     if (getData === p.dataset.parent) {
+    //                         p.classList.add('mls-second-level');
+    //
+    //                         let getSecondLevel = document.querySelectorAll('.mls-second-level');
+    //                         getSecondLevel.forEach(level => {
+    //                             if (p.classList.contains('mls-second-level')) {
+    //                                 level.style.cssText = 'display:block';
+    //
+    //                                 this.secondLevelSection.appendChild(level);
+    //                             }
+    //                            
+    //                             level.addEventListener('click', () => {
+    //
+    //                                 let secondLevelClass = document.querySelectorAll('.mls-second-level');
+    //                                 secondLevelClass.forEach(t => {
+    //                                     t.classList.remove('mls-second-level');
+    //                                 });
+    //
+    //                                 secondLevelClass.forEach(ta => {
+    //                                     let d = data.dataset.termId;
+    //                                     if (d !== ta.dataset.parent) {
+    //                                         ta.classList.add('mls-third-level');
+    //                                     }
+    //                                 });
+    //
+    //                                 let getThirdLevel = document.querySelectorAll('.mls-third-level');
+    //                                 getThirdLevel.forEach(tl => {
+    //                                     if (tl.classList.contains('mls-third-level')) {
+    //                                         tl.style.cssText = 'display:block';
+    //
+    //                                         this.thirdLevelSection.appendChild(tl);
+    //                                     }
+    //
+    //                                     /**
+    //                                      * Issue with fourth column start here
+    //                                      *
+    //                                      *
+    //                                      */
+    //                                     tl.addEventListener('click', () => {
+    //
+    //                                         let thirdLevelClass = document.querySelectorAll('.mls-third-level');
+    //                                         thirdLevelClass.forEach(t => {
+    //                                             t.classList.remove('mls-third-level');
+    //                                         });
+    //
+    //                                         thirdLevelClass.forEach(fa => {
+    //                                             let f = data.dataset.termId;
+    //                                             if (f !== fa.dataset.parent) {
+    //                                                 fa.classList.add('mls-fourth-level');
+    //                                             }
+    //                                         });
+    //
+    //                                         let getFourthLevel = document.querySelectorAll('.mls-fourth-level');
+    //                                         getFourthLevel.forEach(fl => {
+    //                                             if (fl.classList.contains('mls-fourth-level')) {
+    //                                                 fl.style.cssText = 'display:block';
+    //
+    //                                                 this.fourthLevelSection.appendChild(fl);
+    //                                             }
+    //
+    //                                         });
+    //                                     });
+    //                                     /**
+    //                                      *
+    //                                      *
+    //                                      * Issue with fourth column end here
+    //                                      */
+    //
+    //
+    //                                 });
+    //                             });
+    //                         });
+    //                     }
+    //                 });
+    //             });
+    //         });
+    //     }
+    // };
+    // categoryOrderAds?.categories.forEach(cat => {
+    //     cat.dataset.parent !== '0' ? cat.style.display = 'none' : cat.style.display = 'block';
+    // });
+    // categoryOrderAds?.catProcessDataSecond();
 
     /**
      * Ads form - Sell/Buy toggle
@@ -697,6 +729,91 @@ if (document.body.classList.contains('logged-in')) {
     if (sellBuyToggle?.sell) {
         sellBuyToggle?.sellBuyProgress();
     }
+
+    /**
+     * Market Ads form - Sell/Buy toggle
+     */
+    const sellBuyToggleMarket = {
+        sell: document.querySelector('#mls-market-ads-sell'),
+        buy: document.querySelector('#mls-market-ads-buy'),
+        priceWrapper: document.querySelector('#mls-market-ads-price-wrapper'),
+        sellBuyProgressMarket: function () {
+            this.sell.addEventListener('click', () => this.priceWrapper.style.display = 'block');
+            this.buy.addEventListener('click', () => this.priceWrapper.style.display = 'none');
+        }
+    };
+    if (sellBuyToggleMarket?.sell) {
+        sellBuyToggleMarket?.sellBuyProgressMarket();
+    }
+
+    /**
+     * Toggle between chosen category and part on the form on Market
+     *
+     * @type {{process: catSwitcher.process, field: Element}}
+     */
+    const catSwitcher = {
+        field: document.querySelector('.postform'),
+        process: function () {
+            this.field.addEventListener('change', () => {
+                let fieldValue = this.field
+                    .options[this.field.selectedIndex]
+                    .textContent
+                    .replace(/\s/g, '');
+
+                let catResult = document.querySelector(`.${fieldValue}`);
+                catResult ? catResult.style.display = 'block' : undefined;
+            });
+        },
+    };
+
+    catSwitcher.process();
+
+    const carSwitcher = {
+        field: document.querySelector('.mls-car-select'),
+        refresh: document.querySelectorAll('.mls-refresh'),
+        process: function () {
+            this.field.addEventListener('change', () => {
+                let fieldValue = this.field
+                    .options[this.field.selectedIndex]
+                    .textContent
+                    .replace(/\s/g, '');
+
+                let carResult = document.querySelector(`.${fieldValue}`);
+
+                this.refresh.forEach(ref => ref.style.display = 'none');
+
+                if (carResult.style.display === 'block') {
+                    carResult.style.display = 'none'
+                } else {
+                    carResult.style.display = 'block'
+                }
+            });
+        },
+    };
+
+    carSwitcher.process();
+
+    /**
+     * Check if the localStorage exist and if so, refresh the page and click on the button
+     *
+     * @type {{btnClick: Element, process: moveBack.process, btn: Element}}
+     */
+    const moveBack = {
+        btn: document.querySelector('.mls-back-to-first-restart'),
+        btnClick: document.querySelector('.mls-check-refresh'),
+        process: function () {
+            this.btn.addEventListener('click', e => {
+                e.preventDefault();
+
+                localStorage.setItem('back-to-first', 'yes');
+                location.reload();
+            });
+            localStorage.getItem('back-to-first') ? this.btnClick.click() : undefined;
+            localStorage.removeItem('back-to-first');
+        },
+    };
+
+    moveBack.process();
 }
 
 /**

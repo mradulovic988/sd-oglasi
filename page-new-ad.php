@@ -33,7 +33,7 @@ get_header();
             <button class="mls-choose-form active" data-id="mls-home">Naslovna</button>
             <button class="mls-choose-form" data-id="mls-jobs">Poslovi</button>
             <button class="mls-choose-form" data-id="mls-ads">Oglasi</button>
-            <button class="mls-choose-form" data-id="mls-market">Tržište</button>
+            <button class="mls-choose-form mls-check-refresh" data-id="mls-market">Tržište</button>
         </div>
 
         <div class="mls-content-form active" id="mls-home">

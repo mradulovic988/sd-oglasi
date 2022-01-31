@@ -635,7 +635,7 @@ input#mls-nondefault, input#mls-default-open {
     margin: 5px;
 }
 
-#mls-second-load, #mls-third-load, #mls-second-load-jobs, #mls-third-load-jobs, #mls-second-load-jobs-buy, #mls-third-load-jobs-buy, #mls-second-load-ads, #mls-third-load-ads {
+#mls-second-load, #mls-third-load, #mls-second-load-jobs, #mls-third-load-jobs, #mls-second-load-jobs-buy, #mls-third-load-jobs-buy, #mls-second-load-ads, #mls-third-load-ads, #mls-second-load-market-ads, #mls-third-load-market-ads {
     display: none
 }
 
@@ -1058,4 +1058,16 @@ div#mls-second-level-wrapper, div#mls-ads-second-level-wrapper, div#mls-ads-thir
 button#mls-next-to-second-load-jobs {
     position: absolute;
     bottom: 0;
+}
+
+.Autobusiiminibusevi, .Garaža, .Ostalo, .Lokal, .Poslovnazgrada, .Poslovniprostor, .Hala, .Ugostiteljskiobjekat, .Kiosk, .Stovarište {
+    display: none
+}
+
+.Automobili {
+    display: none;
+}
+
+.AC, .Acura, .AlfaRomeo, .Alpina, .Aro, .AsiaMotors {
+    display: none;
 }

@@ -990,6 +990,145 @@
                 </select>
             </div>
         </div>
+        <div class="mls-w-25">
+            <div class="mls-field-wrapper">
+                <label for="mls-market-ads-cars-mark">Oznaka modela</label>
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <input type="text" id="mls-market-ads-cars-marke" class="mls-field" name="mls-market-ads-cars-mark">
+            </div>
+        </div>
+
+        <div class="mls-w-25">
+            <div class="mls-field-wrapper">
+                <label for="mls-market-ads-cars-year">Godište*</label>
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="mls-market-ads-cars-year" class="mls-field" id="mls-market-ads-cars-year" required>
+					<?php
+					$startDate = new \DateTime( 'now' );
+					$endDate   = new \DateTime( '1932-01-01' );
+
+					for ( $date = $startDate; $endDate <= $date; $date->modify( '-1 year' ) ) {
+						echo '<option value="' . $date->format( 'm.Y.' ) . '">' . $date->format( 'Y.' ) . '</option>';
+					}
+					?>
+                </select>
+
+
+            </div>
+        </div>
     </div>
 
+    <div class="mls-row-form">
+        <div class="mls-w-25">
+            <div class="mls-field-wrapper">
+                <label for="mls-market-ads-cars-body">Tip karoserije*</label>
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="mls-market-ads-cars-body" class="mls-car-select mls-field mls-disable" id="mls-market-ads-cars-body" required>
+                    <option value="Limuzina">Limuzina</option>
+                    <option value="Hečbek">Hečbek</option>
+                    <option value="Karavan">Karavan</option>
+                    <option value="Kupe">Kupe</option>
+                    <option value="KabrioletRoadster">Kabriolet/Roadster</option>
+                    <option value="MonuvolumenMiniVan">Monuvolumen (MiniVan)</option>
+                    <option value="DžipSUV">Džip/SUV</option>
+                    <option value="Pickup">Pickup</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mls-w-25">
+            <div class="mls-field-wrapper">
+                <label for="mls-market-ads-cars-cm">Kubikaža*</label>
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <input type="text" id="mls-market-ads-cars-cm" class="mls-field" name="mls-market-ads-cars-cm">
+            </div>
+        </div>
+
+        <div class="mls-w-25">
+            <div class="mls-field-wrapper">
+                <label for="mls-market-ads-cars-hp">Snaga Motora*</label>
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <input type="text" id="mls-market-ads-cars-hp" class="mls-field" name="mls-market-ads-cars-hp">
+            </div>
+        </div>
+
+        <div class="mls-w-25">
+            <div class="mls-field-wrapper">
+                <label for="mls-market-ads-cars-seller">Prodavac*</label>
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="mls-market-ads-cars-seller" class="mls-car-select mls-field mls-disable" id="mls-market-ads-cars-seller" required>
+                    <option value="Audodiler">Audo diler</option>
+                    <option value="AutoSalon">Auto Salon</option>
+                    <option value="Fizičkolice">Fizičko lice</option>
+                    <option value="Ovlašćenidistributer">Ovlašćeni distributer</option>
+                    <option value="Lizingkuća">Lizing kuća</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="mls-row-form">
+        <div class="mls-w-25">
+            <div class="mls-field-wrapper">
+                <label for="mls-market-ads-cars-fuell">Gorivo*</label>
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="mls-market-ads-cars-fuell" class="mls-car-select mls-field mls-disable" id="mls-market-ads-cars-fuell" required>
+                    <option value="Benzin">Benzin</option>
+                    <option value="Dizel">Dizel</option>
+                    <option value="BenzinTng">Benzin + Tng</option>
+                    <option value="MetanCng">Metan CNG</option>
+                    <option value="Hibridni pogon">Hibridni pogon</option>
+                    <option value="Elektricni pogon">Električni pogon</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="mls-w-25">
+            <div class="mls-field-wrapper">
+                <label for="mls-market-ads-cars-km">Prešao*</label>
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <input type="text" id="mls-market-ads-cars-km" class="mls-field" name="mls-market-ads-cars-km">
+            </div>
+        </div>
+
+        <div class="mls-w-25">
+            <div class="mls-field-wrapper">
+                <label for="mls-market-ads-cars-register">Registrovan do*</label>
+			    <?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="mls-market-ads-cars-register" class="mls-car-select mls-field mls-disable" id="mls-market-ads-cars-register" required>
+	                <?php
+	                $startDate = new \DateTime( 'now' );
+	                $endDate   = new \DateTime( '2021-02-02' );
+
+	                for ( $date = $startDate; $endDate <= $date; $date->modify( '-1 month' ) ) {
+		                echo '<option value="' . $date->format( 'm.Y.' ) . '">' . $date->format( 'm.Y.' ) . '</option>';
+	                }
+	                ?>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="mls-row-form">
+        <div class="mls-w-25">
+            <div class="mls-field-wrapper">
+                <label for="mls-market-ads-cars-price">Cena*</label>
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <input type="text" id="mls-market-ads-cars-price" class="mls-field" name="mls-market-ads-cars-price">
+            </div>
+        </div>
+
+        <div class="mls-w-75">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="mls-market-ads-cars-fixed" class="mls-market-ads-deal" name="mls-market-ads-cars-fixed">
+                <label for="mls-market-ads-cars-fixed" class="mls-mr-10">Fiksna</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-notfixed" class="mls-market-ads-fixed" name="mls-market-ads-cars-notfixed">
+                <label for="mls-market-ads-cars-notfixed" class="mls-mr-10">Nije fiksna</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-replacement" class="mls-market-ads-free" name="mls-market-ads-cars-replacement">
+                <label for="mls-market-ads-cars-replacement" class="mls-mr-10">Zamena</label>
+            </div>
+        </div>
+    </div>
 </div>

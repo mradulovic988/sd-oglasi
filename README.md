@@ -30,7 +30,8 @@
 <br />
 <div align="center">
   <a href="#">
-    <img src="#" alt="" width="80" height="80">
+
+[//]: # (    <img src="#" alt="" width="80" height="80">)
   </a>
 
 <h3 align="center">Smederevo Oglasi</h3>

@@ -2030,7 +2030,7 @@ if ( ! class_exists( 'Mls_Config' ) ) {
 				'1301',
 				'Ostalo'
 			],
-			'Skoda'         => [
+			'Škoda'         => [
 				'100',
 				'105',
 				'110',

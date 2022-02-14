@@ -1012,8 +1012,6 @@
 					}
 					?>
                 </select>
-
-
             </div>
         </div>
     </div>
@@ -1094,16 +1092,16 @@
         <div class="mls-w-25">
             <div class="mls-field-wrapper">
                 <label for="mls-market-ads-cars-register">Registrovan do*</label>
-			    <?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
                 <select name="mls-market-ads-cars-register" class="mls-car-select mls-field mls-disable" id="mls-market-ads-cars-register" required>
-	                <?php
-	                $startDate = new \DateTime( 'now' );
-	                $endDate   = new \DateTime( '2021-02-02' );
+					<?php
+					$startDate = new \DateTime( 'now' );
+					$endDate   = new \DateTime( '2023-03-02' );
 
-	                for ( $date = $startDate; $endDate <= $date; $date->modify( '-1 month' ) ) {
-		                echo '<option value="' . $date->format( 'm.Y.' ) . '">' . $date->format( 'm.Y.' ) . '</option>';
-	                }
-	                ?>
+					for ( $date = $startDate; $endDate >= $date; $date->modify( '+1 month' ) ) {
+						echo '<option value="' . $date->format( 'm.Y.' ) . '">' . $date->format( 'm.Y.' ) . '</option>';
+					}
+					?>
                 </select>
             </div>
         </div>
@@ -1131,4 +1129,603 @@
             </div>
         </div>
     </div>
+
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="mls-market-ads-cars-metalik" class="mls-market-ads-deal" name="mls-market-ads-cars-metalik">
+                <label for="mls-market-ads-cars-metalik" class="mls-mr-10">Metalik boja</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-branici" class="mls-market-ads-fixed" name="mls-market-ads-cars-branici">
+                <label for="mls-market-ads-cars-branici" class="mls-mr-10">Branici u boji auta</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-servo" class="mls-market-ads-free" name="mls-market-ads-cars-servo">
+                <label for="mls-market-ads-cars-servo" class="mls-mr-10">Servo volan</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-mulfunkvolan" class="mls-market-ads-free" name="mls-market-ads-cars-mulfunkvolan">
+                <label for="mls-market-ads-cars-mulfunkvolan" class="mls-mr-10">Multifunkcionalni volan</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-tempomat" class="mls-market-ads-deal" name="mls-market-ads-cars-tempomat">
+                <label for="mls-market-ads-cars-tempomat" class="mls-mr-10">Tempomat</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-daljzak" class="mls-market-ads-fixed" name="mls-market-ads-cars-daljzak">
+                <label for="mls-market-ads-cars-daljzak" class="mls-mr-10">Daljinsko zaključavanje</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-purac" class="mls-market-ads-free" name="mls-market-ads-cars-purac">
+                <label for="mls-market-ads-cars-purac" class="mls-mr-10">Putni računar</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-siber" class="mls-market-ads-free" name="mls-market-ads-cars-siber">
+                <label for="mls-market-ads-cars-siber" class="mls-mr-10">Šiber</label>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="mls-market-ads-cars-panorama" class="mls-market-ads-deal" name="mls-market-ads-cars-panorama">
+                <label for="mls-market-ads-cars-panorama" class="mls-mr-10">Panorama krov</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-toniranastakla" class="mls-market-ads-fixed" name="mls-market-ads-cars-toniranastakla">
+                <label for="mls-market-ads-cars-toniranastakla" class="mls-mr-10">Tonirana stakla</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-elekpod" class="mls-market-ads-free" name="mls-market-ads-cars-elekpod">
+                <label for="mls-market-ads-cars-elekpod" class="mls-mr-10">Električni podizači</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-elekretr" class="mls-market-ads-free" name="mls-market-ads-cars-elekretr">
+                <label for="mls-market-ads-cars-elekretr" class="mls-mr-10">Električni retrovizori</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-grejretr" class="mls-market-ads-deal" name="mls-market-ads-cars-grejretr">
+                <label for="mls-market-ads-cars-grejretr" class="mls-mr-10">Grejači retrovizora</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-sedpovisini" class="mls-market-ads-fixed" name="mls-market-ads-cars-sedpovisini">
+                <label for="mls-market-ads-cars-sedpovisini" class="mls-mr-10">Sedišta podesiva po visini</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-elekpodsedista" class="mls-market-ads-free" name="mls-market-ads-cars-elekpodsedista">
+                <label for="mls-market-ads-cars-elekpodsedista" class="mls-mr-10">Elektro podesiva sedišta</label>
+
+                <input type="checkbox" id="mls-market-ads-cars-grejanjesed" class="mls-market-ads-free" name="mls-market-ads-cars-grejanjesed">
+                <label for="mls-market-ads-cars-grejanjesed" class="mls-mr-10">Grejanje sedišta</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Svetla za maglu</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Xenon svetla</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Senzori za svetla</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Senzori za kišu</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Parking senzori</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Webasto</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Krovni nosač</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Kuka za vuču</label>
+
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Aluminijumske felne</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Navigacija</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Bluetooth</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Radio/Kasetofon</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Radio CD</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">CD Charger</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">DVD/TV</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">LED prednja svetla</label>
+
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Grejači vetrobranskog stakla</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">LED zadnja svetla</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Naslon za ruku</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Adaptivni tempomat</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Automatsko parkiranje</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Kamera</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Hands free</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Adaptivna svetla</label>
+
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Head-up display</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">ISOFIX sistem</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Start-stop sistem</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Prednja noćna kamera</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Multimedija</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Glasovne komande</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Masažna sedišta</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Elektro sklopivi retrovizori</label>
+
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Memorija sedišta</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Sportska sedišta</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Sportsko vešanje</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">DPF filter</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Dnevna svetla</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Torba za skije</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Upravljanje na sva četri točka</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Brisači prednjih farova</label>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">360 kamera</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Fabrički ugrađeno dečije sedište</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Ekran na dodir</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Kožni volan</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Volan u kombinaciji drvo/koža</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Grejanje volana</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Elektro zatvaranje prtljažnika</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Zavesice na zadnjim prozorima</label>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Privlačenje vrata pri zatvaranju</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">USB</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Paljenje bez ključa</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Hard disk</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Ventilacija sedišta</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Vazdušno vešanje</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Ambijentalno osvetljenje</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Subwoofer</label>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">MP3</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Digitalni radio</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Utilnica od 12V</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Elektro otvaranje prtljažnika</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Zaključavanje diferencijala</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Otvor za skije</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Podešavanje volana po visini</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Ostava sa hlađenjem</label>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Držači za čaše</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Ručice za menjanje brzina na volanu</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Retrovizor se obara pri rikvercu</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Automatsko zatamnjivanje retrovizora</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Rezervni točak</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Indikator niskog pritiska u gumama</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Keramičke kočnice</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Elektronska ručna kočnica</label>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Asistencija za kretanje na uzbrdici</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">AUX konekcija</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Modovi vožnje</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Postolje za bežično punjenje telefona</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Apple CarPlay</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Android Auto</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Autonomna vožnja</label>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-50">
+            <div class="mls-field-wrapper">
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="" class="mls-car-select mls-field mls-disable" id="">
+                    <option value="">Emisiona klasa motora</option>
+                    <option value="">Euro 1</option>
+                    <option value="">Euro 2</option>
+                    <option value="">Euro 3</option>
+                    <option value="">Euro 4</option>
+                    <option value="">Euro 5</option>
+                    <option value="">Euro 6</option>
+                    <option value="">Euro 7</option>
+                </select>
+            </div>
+        </div>
+        <div class="mls-w-50">
+            <div class="mls-field-wrapper">
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="" class="mls-car-select mls-field mls-disable" id="">
+                    <option value="">Odaberi plivajući zamajac</option>
+                    <option value="">Sa plivajućim zamajcem</option>
+                    <option value="">Bez plivajućeg zamajca</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-50">
+            <div class="mls-field-wrapper">
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="" class="mls-car-select mls-field mls-disable" id="">
+                    <option value="">Pogon</option>
+                    <option value="">Prednji</option>
+                    <option value="">Zadnji</option>
+                    <option value="">4x4</option>
+                    <option value="">4x4 reduktor</option>
+                </select>
+            </div>
+        </div>
+        <div class="mls-w-50">
+            <div class="mls-field-wrapper">
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="" class="mls-car-select mls-field mls-disable" id="">
+                    <option value="">Broj vrata</option>
+                    <option value="">2/3 vrata</option>
+                    <option value="">4/5 vrata</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-50">
+            <div class="mls-field-wrapper">
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="" class="mls-car-select mls-field mls-disable" id="">
+                    <option value="">Broj sedišta</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                    <option value="">6</option>
+                    <option value="">7</option>
+                    <option value="">8</option>
+                    <option value="">9</option>
+                </select>
+            </div>
+        </div>
+        <div class="mls-w-50">
+            <div class="mls-field-wrapper">
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="" class="mls-car-select mls-field mls-disable" id="">
+                    <option value="">Strana volana</option>
+                    <option value="">Levi volan</option>
+                    <option value="">Desni volan</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-50">
+            <div class="mls-field-wrapper">
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="" class="mls-car-select mls-field mls-disable" id="">
+                    <option value="">Boja</option>
+                    <option value="">Bela</option>
+                    <option value="">Bež</option>
+                    <option value="">Bordo</option>
+                    <option value="">Braon</option>
+                    <option value="">Crna</option>
+                    <option value="">Crvena</option>
+                    <option value="">Kameleon</option>
+                    <option value="">Krem</option>
+                    <option value="">Ljubičasta</option>
+                    <option value="">Plava</option>
+                    <option value="">Siva</option>
+                    <option value="">Smeđa</option>
+                    <option value="">Srebrna</option>
+                    <option value="">Tirkiz</option>
+                    <option value="">Teget</option>
+                    <option value="">Zelena</option>
+                    <option value="">Žuta</option>
+                </select>
+            </div>
+        </div>
+        <div class="mls-w-50">
+            <div class="mls-field-wrapper">
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="" class="mls-car-select mls-field mls-disable" id="">
+                    <option value="">Materijal enterijera</option>
+                    <option value="">Štof</option>
+                    <option value="">Prirodna koža</option>
+                    <option value="">Kombinovana koža</option>
+                    <option value="">Velur</option>
+                    <option value="">Drugo</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-50">
+            <div class="mls-field-wrapper">
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="" class="mls-car-select mls-field mls-disable" id="">
+                    <option value="">Boja enterijera</option>
+                    <option value="">Crna</option>
+                    <option value="">Bež</option>
+                    <option value="">Smeđa</option>
+                    <option value="">Siva</option>
+                    <option value="">Druga</option>
+                </select>
+            </div>
+        </div>
+        <div class="mls-w-50">
+            <div class="mls-field-wrapper">
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="" class="mls-car-select mls-field mls-disable" id="">
+                    <option value="">Oštećenje</option>
+                    <option value="">Nije oštećen</option>
+                    <option value="">Oštećen - u voznom stanju</option>
+                    <option value="">Oštećen - nije u voznom stanju</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-50">
+            <div class="mls-field-wrapper">
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="" class="mls-car-select mls-field mls-disable" id="">
+                    <option value="">Klima</option>
+                    <option value="">Nema klimu</option>
+                    <option value="">Manuelna klima</option>
+                    <option value="">Automatska klima</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-50">
+            <div class="mls-field-wrapper">
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <select name="" class="mls-car-select mls-field mls-disable" id="">
+                    <option value="">Poreklo vozila</option>
+                    <option value="">Domaće tablice</option>
+                    <option value="">Na ime kupca</option>
+                    <option value="">Strane tablice</option>
+                </select>
+            </div>
+        </div>
+        <div class="mls-w-50">
+            <div class="mls-field-wrapper">
+				<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                <label for="">Broj šasije</label>
+                <input type="text" id="" class="mls-field" name="">
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Airbag za vozača</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Airbag za suvozača</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Bočni airbag</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Child lock</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">ABS</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">ESP</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">ASR</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Alarm</label>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Kodiran ključ</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Blokada motora</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Centralno zaklučavanje</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Mehanička zaštita</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Ulazak bez ključa</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Asistencija praćenja trake</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Senzor mrtvog ugla</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">OBD zaštita</label>
+            </div>
+        </div>
+    </div>
+    <div class="mls-row-form">
+        <div class="mls-w-100">
+            <div class="mls-field-wrapper">
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Vazdušni jastuci za kolena</label>
+
+                <input type="checkbox" id="" class="mls-market-ads-deal" name="">
+                <label for="" class="mls-mr-10">Automatsko kočenje</label>
+            </div>
+        </div>
+    </div>
+
 </div>

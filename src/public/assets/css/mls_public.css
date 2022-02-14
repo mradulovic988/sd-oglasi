@@ -1060,11 +1060,11 @@ button#mls-next-to-second-load-jobs {
     bottom: 0;
 }
 
-.Autobusiiminibusevi, .Garaža, .Ostalo, .Lokal, .Poslovnazgrada, .Poslovniprostor, .Hala, .Ugostiteljskiobjekat, .Kiosk, .Stovarište {
+.Autobusiiminibusevi, .Garaža, .Ostalo, .Lokal, .Poslovnazgrada, .Poslovniprostor, .Hala, .Ugostiteljskiobjekat, .Kiosk, .Stovarište, .Stan, .Kuća {
     display: none
 }
 
-.Automobili {
+.Automobili, .Kamioni, .Motori, .Plovila, .KombiIDostavnaVozila {
     display: none;
 }
 

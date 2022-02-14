@@ -184,6 +184,401 @@ $_html   = new Mls_Html();
         ------------------------------->
 
         <!-----------------------------
+        -------- Kuca ostala polja ----
+        ------------------------------->
+
+        <div class="Kuća">
+            <div class="mls-w-100">
+                <div id="mls-market-ads-appartment-add">
+                    <div class="mls-w-70 mls-padding-0">
+                        <div class="mls-field-wrapper mls-pt-35">
+                            <input type="checkbox" id="mls-market-ads-add-odmah-useljiv" class="mls-market-ads-add-odmah-useljiv" name="mls-market-ads-add-odmah-useljiv">
+                            <label for="mls-market-ads-add-odmah-useljiv" class="mls-mr-10">Odmah useljiv</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-uknjizen" class="mls-market-ads-add-uknjizen" name="mls-market-ads-add-uknjizen">
+                            <label for="mls-market-ads-add-uknjizen" class="mls-mr-10">Uknjižen</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-moze-zamena" class="mls-market-ads-add-moze-zamena" name="mls-market-ads-add-moze-zamena">
+                            <label for="mls-market-ads-add-moze-zamena" class="mls-mr-10">Može zamena</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-hitna-prodaja" class="mls-market-ads-add-hitna-prodaja" name="mls-market-ads-add-hitna-prodaja">
+                            <label for="mls-market-ads-add-hitna-prodaja" class="mls-mr-10">Hitna prodaja</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-pod-hipotekom" class="mls-market-ads-add-pod-hipotekom" name="mls-market-ads-add-pod-hipotekom">
+                            <label for="mls-market-ads-add-pod-hipotekom" class="mls-mr-10">Pod hipotekom</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-energetski-pasos" class="mls-market-ads-add-energetski-pasos" name="mls-market-ads-add-energetski-pasos">
+                            <label for="mls-market-ads-add-energetski-pasos" class="mls-mr-10">Energetski pasoš</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mls-w-100">
+                <div id="mls-market-ads-appartment-price-ostalo">
+                    <div class="mls-row-form">
+                        <div class="mls-w-70 mls-padding-0">
+                            <div class="mls-field-wrapper mls-pt-35">
+                                <input type="checkbox" id="mls-market-ads-add-apartment-balcon" class="mls-market-ads-add-apartment-balcon" name="mls-market-ads-add-apartment-balcon">
+                                <label for="mls-market-ads-add-apartment-balcon" class="mls-mr-10">Terasa</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-fr-balcon" class="mls-market-ads-add-apartment-fr-balcon" name="mls-market-ads-add-apartment-fr-balcon">
+                                <label for="mls-market-ads-add-apartment-fr-balcon" class="mls-mr-10">Francuski balkon</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-lodja" class="mls-market-ads-add-apartment-lodja" name="mls-market-ads-add-apartment-lodja">
+                                <label for="mls-market-ads-add-apartment-lodja" class="mls-mr-10">Lođa</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-es" class="mls-market-ads-add-apartment-es" name="mls-market-ads-add-apartment-es">
+                                <label for="mls-market-ads-add-apartment-es" class="mls-mr-10">Klima</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-row-form">
+                        <div class="mls-w-70 mls-padding-0">
+                            <div class="mls-field-wrapper mls-pt-35">
+                                <input type="checkbox" id="mls-market-ads-add-apartment-elevator" class="mls-market-ads-add-apartment-elevator" name="mls-market-ads-add-apartment-elevator">
+                                <label for="mls-market-ads-add-apartment-elevator" class="mls-mr-10">Lift</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-basement" class="mls-market-ads-add-apartment-basement" name="mls-market-ads-add-apartment-basement">
+                                <label for="mls-market-ads-add-apartment-basement" class="mls-mr-10">Podrum</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-hot-wather" class="mls-market-ads-add-apartment-hot-wather" name="mls-market-ads-add-apartment-hot-wather">
+                                <label for="mls-market-ads-add-apartment-hot-wather" class="mls-mr-10">Topla voda</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-phone" class="mls-market-ads-add-apartment-phone" name="mls-market-ads-add-apartment-phone">
+                                <label for="mls-market-ads-add-apartment-phone" class="mls-mr-10">Telefon</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-row-form">
+                        <div class="mls-w-70 mls-padding-0">
+                            <div class="mls-field-wrapper mls-pt-35">
+                                <input type="checkbox" id="mls-market-ads-add-apartment-tv" class="mls-market-ads-add-apartment-tv" name="mls-market-ads-add-apartment-tv">
+                                <label for="mls-market-ads-add-apartment-tv" class="mls-mr-10">KATV</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-internet" class="mls-market-ads-add-apartment-internet" name="mls-market-ads-add-apartment-internet">
+                                <label for="mls-market-ads-add-apartment-internet" class="mls-mr-10">Internet</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-interfon" class="mls-market-ads-add-apartment-interfon" name="mls-market-ads-add-apartment-interfon">
+                                <label for="mls-market-ads-add-apartment-interfon" class="mls-mr-10">Interfon</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-video-secure" class="mls-market-ads-add-apartment-video-secure" name="mls-market-ads-add-apartment-video-secure">
+                                <label for="mls-market-ads-add-apartment-video-secure" class="mls-mr-10">Video nadzor</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mls-row-form">
+                        <div class="mls-w-70 mls-padding-0">
+                            <div class="mls-field-wrapper mls-pt-35">
+                                <input type="checkbox" id="mls-market-ads-add-apartment-fire" class="mls-market-ads-add-apartment-fire" name="mls-market-ads-add-apartment-fire">
+                                <label for="mls-market-ads-add-apartment-fire" class="mls-mr-10">Kamin</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-rest-garage" class="mls-market-ads-add-apartment-rest-garage" name="mls-market-ads-add-apartment-rest-garage">
+                                <label for="mls-market-ads-add-apartment-rest-garage" class="mls-mr-10">Garaža</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-parking" class="mls-market-ads-add-apartment-parking" name="mls-market-ads-add-apartment-parking">
+                                <label for="mls-market-ads-add-apartment-parking" class="mls-mr-10">Parking</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-garden" class="mls-market-ads-add-apartment-garden" name="mls-market-ads-add-apartment-garden">
+                                <label for="mls-market-ads-add-apartment-garden" class="mls-mr-10">Sa baštom</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-----------------------------
+        -------- End Kuca ----
+        ------------------------------->
+
+        <!-----------------------------
+        -------- Stan ----
+        ------------------------------->
+
+        <div class="Stan">
+            <div id="mls-market-ads-apartment-price-wrapper">
+                <div class="mls-row-form">
+                    <div class="mls-w-30">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-market-ads-apartment-type">Tip nekretnine</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <input type="text" id="mls-market-ads-apartment-type" class="mls-field" value="Stan" name="mls-market-ads-apartment-type" disabled>
+                        </div>
+                    </div>
+
+                    <div class="mls-w-20">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-market-ads-apartment-size">Kvadratura</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <input type="number" id="mls-market-ads-apartment-size" class="mls-field" name="mls-market-ads-apartment-size">
+                        </div>
+                    </div>
+
+                    <div class="mls-w-20">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-market-ads-apartment-size">Broj soba</label>
+							<?php echo $_html->mls_html_tooltip( 'Nulla porttitor accumsan tincidunt. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Cras ultricies ligula sed magna dictum porta.' ); ?>
+                            <select name="" id="">
+                                <option value="">-- Izaberite --</option>
+                                <option value="1">1</option>
+                                <option value="15">1.5</option>
+                                <option value="2">2</option>
+                                <option value="2.5">2.5</option>
+                                <option value="3">3</option>
+                                <option value="3.5">3.5</option>
+                                <option value="4">4</option>
+                                <option value="4.5">4.5</option>
+                                <option value="5">5</option>
+                                <option value="5more">Preko 5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mls-row-form">
+                    <div class="mls-row-form">
+                        <div class="mls-w-30">
+                            <div class="mls-field-wrapper">
+                                <label for="mls-market-ads-apartment-ads">Oglašivač</label><br>
+                                <select name="mls-market-ads-apartment-ads" id="mls-market-ads-apartment-ads" class="mls-field">
+                                    <option value="">-- Izaberite --</option>
+                                    <option value="Vlasnik">Vlasnik</option>
+                                    <option value="Investitor">Investitor</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mls-w-20">
+                            <div class="mls-field-wrapper">
+                                <label for="mls-market-ads-apartment-object-type">Tip objekta</label><br>
+                                <select name="mls-market-ads-apartment-object-type" id="mls-market-ads-apartment-object-type" class="mls-field">
+                                    <option value="">-- Izaberite --</option>
+                                    <option value="StaraGradnja">Stara gradnja</option>
+                                    <option value="NovaGradnja">Nova gradnja</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mls-w-20">
+                            <div class="mls-field-wrapper">
+                                <label for="mls-market-ads-apartment-stanje-objekta">Stanje objekta</label><br>
+                                <select name="mls-market-ads-apartment-stanje-objekta" id="mls-market-ads-apartment-stanje-objekta" class="mls-field">
+                                    <option value="">-- Izaberite --</option>
+                                    <option value="Novo">Novo</option>
+                                    <option value="Renovirano">Renovirano</option>
+                                    <option value="Lux">Lux</option>
+                                    <option value="ZaRenoviranje">Za renoviranje</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mls-w-20">
+                            <div class="mls-field-wrapper">
+                                <label for="mls-market-ads-apartment-grejanje">Grejanje</label><br>
+                                <select name="mls-market-ads-apartment-grejanje" id="mls-market-ads-apartment-grejanje" class="mls-field">
+                                    <option value="">-- Izaberite --</option>
+                                    <option value="KaljavaPeć">Kaljava Peć</option>
+                                    <option value="ParnoGrejanje">Parno Grejanje</option>
+                                    <option value="CentralnoGrejanje">Centralno Grejanje</option>
+                                    <option value="TAPec">TA Pec</option>
+                                    <option value="NaStruju">Na Struju</option>
+                                    <option value="PodnoGrejanje">Podno Grejanje</option>
+                                    <option value="NorveškiRadijatori">Norveški Radijatori</option>
+                                    <option value="Ostalo">Ostalo</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-20">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-market-ads-apartment-sprat">Sprat</label><br>
+                            <select name="mls-market-ads-apartment-sprat" id="mls-market-ads-apartment-sprat" class="mls-field">
+                                <option value="">-- Izaberite --</option>
+                                <option value="Suturen">Suturen</option>
+                                <option value="Prizemlje">Prizemlje</option>
+                                <option value="VisokoPrizemlje">Visoko Prizemlje</option>
+                                <option value="Potkrovlje">Potkrovlje</option>
+								<?php
+								for ( $i = 2; $i <= 25; $i ++ ) {
+									echo '<option value="' . $i . '">' . $i . '</option>';
+								}
+								?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mls-w-20">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-market-ads-apartment-spratnost">Ukupna spratnost</label><br>
+                            <select name="mls-market-ads-apartment-spratnost" id="mls-market-ads-apartment-spratnost" class="mls-field">
+								<?php
+								for ( $i = 1; $i <= 30; $i ++ ) {
+									echo '<option value="' . $i . '">' . $i . '</option>';
+								}
+								?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mls-w-20">
+                        <div class="mls-field-wrapper">
+                            <label for="mls-market-ads-apartment-rezije">Mesečne režije</label><br>
+                            <input type="text" id="mls-market-ads-rezije" class="mls-field" name="mls-market-ads-rezije">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-100">
+                        <div class="mls-field-wrapper">
+                            <h4>Dodatno</h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="mls-market-ads-add-price-wrapper">
+                    <div class="mls-row-form">
+                        <div class="mls-w-70 mls-padding-0">
+                            <div class="mls-field-wrapper mls-pt-35">
+                                <input type="checkbox" id="mls-market-ads-add-apartment-day" class="mls-market-ads-add-apartment-day" name="mls-market-ads-add-apartment-day">
+                                <label for="mls-market-ads-add-apartment-day" class="mls-mr-10">Stan na dan</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-now" class="mls-market-ads-add-apartment-now" name="mls-market-ads-add-apartment-now">
+                                <label for="mls-market-ads-add-apartment-now" class="mls-mr-10">Odmah useljiv</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-not-flor" class="mls-market-ads-add-apartment-not-flor" name="mls-market-ads-add-apartment-not-flor">
+                                <label for="mls-market-ads-add-apartment-not-flor" class="mls-mr-10">Nije poslednji sprat</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-in-house" class="mls-market-ads-add-apartment-in-house" name="mls-market-ads-add-apartment-in-house">
+                                <label for="mls-market-ads-add-apartment-in-house" class="mls-mr-10">Nije stan u kuci</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-row-form">
+                        <div class="mls-w-70 mls-padding-0">
+                            <div class="mls-field-wrapper mls-pt-35">
+                                <input type="checkbox" id="mls-market-ads-add-apartment-dep" class="mls-market-ads-add-apartment-dep" name="mls-market-ads-add-apartment-dep">
+                                <label for="mls-market-ads-add-apartment-dep" class="mls-mr-10">Depozit</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-smokers" class="mls-market-ads-add-apartment-smokers" name="mls-market-ads-add-apartment-smokers">
+                                <label for="mls-market-ads-add-apartment-smokers" class="mls-mr-10">Za pušače</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-non-smoker" class="mls-market-ads-add-apartment-non-smoker" name="mls-market-ads-add-apartment-non-smoker">
+                                <label for="mls-market-ads-add-apartment-non-smoker" class="mls-mr-10">Za nepušače</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-students" class="mls-market-ads-add-apartment-students" name="mls-market-ads-add-apartment-students">
+                                <label for="mls-market-ads-add-apartment-students" class="mls-mr-10">Za studente</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mls-row-form">
+                        <div class="mls-w-70 mls-padding-0">
+                            <div class="mls-field-wrapper mls-pt-35">
+                                <input type="checkbox" id="mls-market-ads-add-apartment-maintain" class="mls-market-ads-add-apartment-maintain" name="mls-market-ads-add-apartment-maintain">
+                                <label for="mls-market-ads-add-apartment-maintain" class="mls-mr-10">Smeštaj za radnike</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-pets" class="mls-market-ads-add-apartment-pets" name="mls-market-ads-add-apartment-pets">
+                                <label for="mls-market-ads-add-apartment-pets" class="mls-mr-10">Dozvoljeni kućni ljubimci</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-lux" class="mls-market-ads-add-apartment-lux" name="mls-market-ads-add-apartment-lux">
+                                <label for="mls-market-ads-add-apartment-lux" class="mls-mr-10">Salonski</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-duplex" class="mls-market-ads-add-apartment-duplex" name="mls-market-ads-add-apartment-duplex">
+                                <label for="mls-market-ads-add-apartment-duplex" class="mls-mr-10">Duplex</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mls-row-form">
+                        <div class="mls-w-70 mls-padding-0">
+                            <div class="mls-field-wrapper mls-pt-35">
+                                <input type="checkbox" id="mls-market-ads-add-apartment-penthouse" class="mls-market-ads-add-apartment-penthouse" name="mls-market-ads-add-apartment-penthouse">
+                                <label for="mls-market-ads-add-apartment-penthouse" class="mls-mr-10">Penthaus</label>
+
+                                <input type="checkbox" id="mls-market-ads-add-apartment-up-flor" class="mls-market-ads-add-apartment-up-flor" name="mls-market-ads-add-apartment-up-flor">
+                                <label for="mls-market-ads-add-apartment-up-flor" class="mls-mr-10">Potkrovlje</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-70 mls-padding-0">
+                        <div class="mls-field-wrapper mls-pt-35">
+                            <input type="checkbox" id="mls-market-ads-add-apartment-balcon" class="mls-market-ads-add-apartment-balcon" name="mls-market-ads-add-apartment-balcon">
+                            <label for="mls-market-ads-add-apartment-balcon" class="mls-mr-10">Terasa</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-apartment-fr-balcon" class="mls-market-ads-add-apartment-fr-balcon" name="mls-market-ads-add-apartment-fr-balcon">
+                            <label for="mls-market-ads-add-apartment-fr-balcon" class="mls-mr-10">Francuski balkon</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-apartment-lodja" class="mls-market-ads-add-apartment-lodja" name="mls-market-ads-add-apartment-lodja">
+                            <label for="mls-market-ads-add-apartment-lodja" class="mls-mr-10">Lođa</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-apartment-es" class="mls-market-ads-add-apartment-es" name="mls-market-ads-add-apartment-es">
+                            <label for="mls-market-ads-add-apartment-es" class="mls-mr-10">Klima</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mls-row-form">
+                    <div class="mls-w-70 mls-padding-0">
+                        <div class="mls-field-wrapper mls-pt-35">
+                            <input type="checkbox" id="mls-market-ads-add-apartment-elevator" class="mls-market-ads-add-apartment-elevator" name="mls-market-ads-add-apartment-elevator">
+                            <label for="mls-market-ads-add-apartment-elevator" class="mls-mr-10">Lift</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-apartment-basement" class="mls-market-ads-add-apartment-basement" name="mls-market-ads-add-apartment-basement">
+                            <label for="mls-market-ads-add-apartment-basement" class="mls-mr-10">Podrum</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-apartment-hot-wather" class="mls-market-ads-add-apartment-hot-wather" name="mls-market-ads-add-apartment-hot-wather">
+                            <label for="mls-market-ads-add-apartment-hot-wather" class="mls-mr-10">Topla voda</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-apartment-phone" class="mls-market-ads-add-apartment-phone" name="mls-market-ads-add-apartment-phone">
+                            <label for="mls-market-ads-add-apartment-phone" class="mls-mr-10">Telefon</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mls-row-form">
+                    <div class="mls-w-70 mls-padding-0">
+                        <div class="mls-field-wrapper mls-pt-35">
+                            <input type="checkbox" id="mls-market-ads-add-apartment-tv" class="mls-market-ads-add-apartment-tv" name="mls-market-ads-add-apartment-tv">
+                            <label for="mls-market-ads-add-apartment-tv" class="mls-mr-10">KATV</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-apartment-internet" class="mls-market-ads-add-apartment-internet" name="mls-market-ads-add-apartment-internet">
+                            <label for="mls-market-ads-add-apartment-internet" class="mls-mr-10">Internet</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-apartment-interfon" class="mls-market-ads-add-apartment-interfon" name="mls-market-ads-add-apartment-interfon">
+                            <label for="mls-market-ads-add-apartment-interfon" class="mls-mr-10">Interfon</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-apartment-video-secure" class="mls-market-ads-add-apartment-video-secure" name="mls-market-ads-add-apartment-video-secure">
+                            <label for="mls-market-ads-add-apartment-video-secure" class="mls-mr-10">Video nadzor</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mls-row-form">
+                    <div class="mls-w-70 mls-padding-0">
+                        <div class="mls-field-wrapper mls-pt-35">
+                            <input type="checkbox" id="mls-market-ads-add-apartment-fire" class="mls-market-ads-add-apartment-fire" name="mls-market-ads-add-apartment-fire">
+                            <label for="mls-market-ads-add-apartment-fire" class="mls-mr-10">Kamin</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-apartment-rest-garage" class="mls-market-ads-add-apartment-rest-garage" name="mls-market-ads-add-apartment-rest-garage">
+                            <label for="mls-market-ads-add-apartment-rest-garage" class="mls-mr-10">Garaža</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-apartment-parking" class="mls-market-ads-add-apartment-parking" name="mls-market-ads-add-apartment-parking">
+                            <label for="mls-market-ads-add-apartment-parking" class="mls-mr-10">Parking</label>
+
+                            <input type="checkbox" id="mls-market-ads-add-apartment-garden" class="mls-market-ads-add-apartment-garden" name="mls-market-ads-add-apartment-garden">
+                            <label for="mls-market-ads-add-apartment-garden" class="mls-mr-10">Sa baštom</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-----------------------------
+        -------- End Stan ----
+        ------------------------------->
+
+        <!-----------------------------
         -------- Nekretnine Lokal ----
         ------------------------------->
         <div class="Lokal">
@@ -1311,6 +1706,10 @@ $_html   = new Mls_Html();
         -------- Automobili ----
         ------------------------------->
 		<?php include MLAB_STUDIO_DIR . 'template-parts/new-ad-forms/ads-market/vehicle-template-parts/content-car-form.php'; ?>
+		<?php include MLAB_STUDIO_DIR . 'template-parts/new-ad-forms/ads-market/vehicle-template-parts/content-truck-form.php'; ?>
+		<?php include MLAB_STUDIO_DIR . 'template-parts/new-ad-forms/ads-market/vehicle-template-parts/content-ride-form.php'; ?>
+		<?php include MLAB_STUDIO_DIR . 'template-parts/new-ad-forms/ads-market/vehicle-template-parts/content-plovila-form.php'; ?>
+		<?php include MLAB_STUDIO_DIR . 'template-parts/new-ad-forms/ads-market/vehicle-template-parts/content-service-vehicle-form.php'; ?>
         <!-----------------------------
 		------ End Automobili -----
 		------------------------------->

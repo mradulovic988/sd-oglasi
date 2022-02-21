@@ -67,7 +67,8 @@ if (document.body.classList.contains('logged-in')) {
         const styleAttribute = [
             document.querySelector('.woocommerce-MyAccount-navigation-link--osnovni-podaci'),
             document.querySelector('.woocommerce-MyAccount-navigation-link--deklaracija'),
-            document.querySelector('.woocommerce-MyAccount-navigation-link--customer-logout')
+            document.querySelector('.woocommerce-MyAccount-navigation-link--customer-logout'),
+            document.querySelector('.woocommerce-MyAccount-navigation-link--moje-poruke')
         ];
 
         // If element has a class is-active display it
@@ -754,15 +755,17 @@ if (document.body.classList.contains('logged-in')) {
     const catSwitcher = {
         field: document.querySelector('.postform'),
         process: function () {
-            this.field.addEventListener('change', () => {
-                let fieldValue = this.field
-                    .options[this.field.selectedIndex]
-                    .textContent
-                    .replace(/\s/g, '');
+            if (this.field) {
+                this.field.addEventListener('change', () => {
+                    let fieldValue = this.field
+                        .options[this.field.selectedIndex]
+                        .textContent
+                        .replace(/\s/g, '');
 
-                let catResult = document.querySelector(`.${fieldValue}`);
-                catResult ? catResult.style.display = 'block' : undefined;
-            });
+                    let catResult = document.querySelector(`.${fieldValue}`);
+                    catResult ? catResult.style.display = 'block' : undefined;
+                });
+            }
         },
     };
 
@@ -772,22 +775,24 @@ if (document.body.classList.contains('logged-in')) {
         field: document.querySelector('.mls-car-select'),
         refresh: document.querySelectorAll('.mls-refresh'),
         process: function () {
-            this.field.addEventListener('change', () => {
-                let fieldValue = this.field
-                    .options[this.field.selectedIndex]
-                    .textContent
-                    .replace(/\s/g, '');
+            if (this.field) {
+                this.field.addEventListener('change', () => {
+                    let fieldValue = this.field
+                        .options[this.field.selectedIndex]
+                        .textContent
+                        .replace(/\s/g, '');
 
-                let carResult = document.querySelector(`.${fieldValue}`);
+                    let carResult = document.querySelector(`.${fieldValue}`);
 
-                this.refresh.forEach(ref => ref.style.display = 'none');
+                    this.refresh.forEach(ref => ref.style.display = 'none');
 
-                if (carResult.style.display === 'block') {
-                    carResult.style.display = 'none'
-                } else {
-                    carResult.style.display = 'block'
-                }
-            });
+                    if (carResult.style.display === 'block') {
+                        carResult.style.display = 'none'
+                    } else {
+                        carResult.style.display = 'block'
+                    }
+                });
+            }
         },
     };
 
@@ -802,12 +807,14 @@ if (document.body.classList.contains('logged-in')) {
         btn: document.querySelector('.mls-back-to-first-restart'),
         btnClick: document.querySelector('.mls-check-refresh'),
         process: function () {
-            this.btn.addEventListener('click', e => {
-                e.preventDefault();
+            if (this.btn) {
+                this.btn.addEventListener('click', e => {
+                    e.preventDefault();
 
-                localStorage.setItem('back-to-first', 'yes');
-                location.reload();
-            });
+                    localStorage.setItem('back-to-first', 'yes');
+                    location.reload();
+                });
+            }
             localStorage.getItem('back-to-first') ? this.btnClick.click() : undefined;
             localStorage.removeItem('back-to-first');
         },

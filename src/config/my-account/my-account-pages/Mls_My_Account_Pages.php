@@ -20,6 +20,7 @@ if ( ! class_exists( 'Mls_My_Account_Pages' ) ) {
 			add_action( 'woocommerce_account_deklaracija_endpoint', array( $this, 'mls_declaration_endpoint_content' ) );
 			add_action( 'woocommerce_account_moji-oglasi_endpoint', array( $this, 'mls_my_ads_endpoint_content' ) );
 			add_action( 'woocommerce_account_moji-izabrani_endpoint', array( $this, 'mls_my_favorites_endpoint_content' ) );
+			add_action( 'woocommerce_account_moje-poruke_endpoint', array( $this, 'mls_my_messages_endpoint_content' ) );
 			add_action( 'woocommerce_account_izmeni-oglas_endpoint', array( $this, 'mls_edit_ads_endpoint_content' ) );
 			add_filter( 'woocommerce_account_menu_items', array( $this, 'mls_my_account_menu_order' ) );
 		}
@@ -31,6 +32,7 @@ if ( ! class_exists( 'Mls_My_Account_Pages' ) ) {
 			add_rewrite_endpoint( 'moji-oglasi', EP_ROOT | EP_PAGES );
 			add_rewrite_endpoint( 'moji-izabrani', EP_ROOT | EP_PAGES );
 			add_rewrite_endpoint( 'izmeni-oglas', EP_ROOT | EP_PAGES );
+			add_rewrite_endpoint( 'moje-poruke', EP_ROOT | EP_PAGES );
 		}
 
 		public function mls_my_account_menu_order() {
@@ -38,6 +40,7 @@ if ( ! class_exists( 'Mls_My_Account_Pages' ) ) {
 				'moji-podaci'     => __( 'Moji podaci i deklaracija', 'woocommerce' ),
 				'osnovni-podaci'  => __( 'Osnovni podaci naloga', 'woocommerce' ),
 				'deklaracija'     => __( 'Deklaracija', 'woocommerce' ),
+				'moje-poruke'     => __( 'Moje poruke', 'woocommerce' ),
 //                'orders' => __('Your Orders', 'woocommerce'),
 //                'downloads' => __('Download', 'woocommerce'),
 //                'edit-address' => __('Addresses', 'woocommerce'),
@@ -71,6 +74,10 @@ if ( ! class_exists( 'Mls_My_Account_Pages' ) ) {
 
 		public function mls_edit_ads_endpoint_content() {
 			get_template_part( 'src/config/my-account/template-parts-my-account/content', 'edit-ads' );
+		}
+
+		public function mls_my_messages_endpoint_content() {
+			get_template_part( 'src/config/my-account/template-parts-my-account/content', 'my-messages' );
 		}
 	}
 

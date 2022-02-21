@@ -22,13 +22,15 @@ if ( ! class_exists( 'Mls_Public' ) ) {
 
 
 		public function mls_public_enqueue() {
-			wp_enqueue_script( 'mls_public_script', MLAB_STUDIO_DIRECTORY_URI . '/src/public/assets/js/mls_public.js', array(), '1.0.0', true );
-			wp_enqueue_script( 'mls_public_ajax', MLAB_STUDIO_DIRECTORY_URI . '/src/public/assets/js/mls_public_ajax.js', array('jquery'), null, true );
-			wp_localize_script( 'mls_public_ajax', 'mls_public_ajax', array( 'mls_ajax' => admin_url( 'admin-ajax.php' ) ) );
-//            wp_enqueue_script('mls_geolocation', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAVfNWiMpj-mwPSJ_gc7UBDJe5YT0cAPy0&callback=initMap&libraries=&v=weekly', array(), '1.0.0', true);
-//            wp_enqueue_script('mls_polyfill', 'https://polyfill.io/v3/polyfill.min.js?features=default', array(), '1.0.0');
-			wp_enqueue_style( 'mls_public_style', MLAB_STUDIO_DIRECTORY_URI . '/src/public/assets/css/mls_public.css' );
+			// Bootstrap
+			wp_enqueue_style( 'bootstrap-style', MLAB_STUDIO_DIRECTORY_URI . '/bootstrap/css/bootstrap.min.css' );
+			wp_enqueue_script( 'bootstrap-js', MLAB_STUDIO_DIRECTORY_URI . '/bootstrap/js/bootstrap.bundle.min.js', array( 'jquery' ) );
 
+			// Custom
+			wp_enqueue_script( 'mls_public_script', MLAB_STUDIO_DIRECTORY_URI . '/src/public/assets/js/mls_public.js', array(), '1.0.0', true );
+			wp_enqueue_script( 'mls_public_ajax', MLAB_STUDIO_DIRECTORY_URI . '/src/public/assets/js/mls_public_ajax.js', array( 'jquery' ), null, true );
+			wp_localize_script( 'mls_public_ajax', 'mls_public_ajax', array( 'mls_ajax' => admin_url( 'admin-ajax.php' ) ) );
+			wp_enqueue_style( 'mls_public_style', MLAB_STUDIO_DIRECTORY_URI . '/src/public/assets/css/mls_public.css' );
 			wp_enqueue_script( 'wpb-fa', 'https://kit.fontawesome.com/0cca66ee47.js', array(), '1.0.0', true ); // Font Awesome icons
 		}
 

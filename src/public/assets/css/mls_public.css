@@ -144,7 +144,8 @@ li.mls-li {
     display: none;
 }
 
-.woocommerce-MyAccount-navigation-link--osnovni-podaci, .woocommerce-MyAccount-navigation-link--deklaracija, .woocommerce-MyAccount-navigation-link--customer-logout {
+.woocommerce-MyAccount-navigation-link--osnovni-podaci, .woocommerce-MyAccount-navigation-link--deklaracija, .woocommerce-MyAccount-navigation-link--customer-logout,
+.woocommerce-MyAccount-navigation-link--moje-poruke {
     display: none;
 }
 
@@ -154,12 +155,14 @@ li.mls-li {
     border: 1px solid #3d5b9a;
 }
 
-.woocommerce-MyAccount-navigation-link--osnovni-podaci a, .woocommerce-MyAccount-navigation-link--deklaracija a, .woocommerce-MyAccount-navigation-link--customer-logout a {
+.woocommerce-MyAccount-navigation-link--osnovni-podaci a, .woocommerce-MyAccount-navigation-link--deklaracija a, .woocommerce-MyAccount-navigation-link--customer-logout a,
+.woocommerce-MyAccount-navigation-link--moje-poruke a {
     background-color: #cbe2ed;
     color: #000;
 }
 
-.woocommerce-MyAccount-navigation-link--osnovni-podaci a:hover, .woocommerce-MyAccount-navigation-link--deklaracija a:hover, .woocommerce-MyAccount-navigation-link--customer-logout a:hover {
+.woocommerce-MyAccount-navigation-link--osnovni-podaci a:hover, .woocommerce-MyAccount-navigation-link--deklaracija a:hover, .woocommerce-MyAccount-navigation-link--customer-logout a:hover,
+.woocommerce-MyAccount-navigation-link--moje-poruke a:hover {
     background-color: #3d5b9a !important;
     color: #fff;
 }
@@ -168,10 +171,10 @@ li.mls-li {
     background-color: #cbe2ed;
 }
 
-nav.woocommerce-MyAccount-navigation {
-    padding: 5px;
-    border: 1px solid #3d5b9a;
-}
+/*nav.woocommerce-MyAccount-navigation {*/
+/*    padding: 5px;*/
+/*    border: 1px solid #3d5b9a;*/
+/*}*/
 
 div#mls-declaration-person {
     display: inline-flex;
